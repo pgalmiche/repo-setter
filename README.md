@@ -34,3 +34,9 @@ Use:
 ```
 rm -r ./.repo_setter
 ```
+
+# Install the content with a script
+
+```bash
+bash -c "$(curl -fsSL https://gitlab.com/pgalmiche/repo_setter/-/raw/master/scripts/config-init)"
+```
