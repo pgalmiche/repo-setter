@@ -1,0 +1,15 @@
+/outputs
+/Datasets
+*.ini
+/quality_map_focus/data/
+/quality_map_focus/cut_remeshed_shapes/
+
+*info_backup
+/doc/html/
+/Dashboard/logs/
+*.ply
+*.obj
+*.pyc
+.vscode
+
+ 
