@@ -1,44 +1,14 @@
-# Manual install for the repo_setter:
+# Name of the project
 
-1 - Go inside your git repository in which you want to do the setup.
-2 - Create the repo with:
-```
-git init --bare ./.repo_setter
-```
 
-Then, make sure the --git-dir is the same as the directory where you created the repo above with:
-```
-alias repo_setter="git --git-dir=$PWD/.repo_setter --work-tree=."
-```
+# Documentation
 
-# Basic workflow
 
-To configure the remote for this repo with ssh, you can use:
-```
-config remote add origin git@gitlab.com:pgalmiche/repo_setter.git
-```
+# Set up
 
-Then, you can add, commit and push with:
-```
-config add ~/.config/something/somefile
-config commit -m "add somefile"
-config push
-```
-Or pull what has been modified on another computer with:
-```
-config pull
-```
+This project has been set up using the [repo_setter](https://gitlab.com/pgalmiche/repo_setter) git repository.
 
-You finally can remove the repo_setter repository as you already added the required files.
-Use: 
-```
-rm -r ./.repo_setter
-```
-
-# Install the content with a script
-
+Its content has been added with the following command:
 ```bash
 bash -c "$(curl -fsSL https://gitlab.com/pgalmiche/repo_setter/-/raw/main/scripts/config-init)"
 ```
-
-
