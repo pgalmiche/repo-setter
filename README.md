@@ -1,8 +1,8 @@
 # Repo Setter
 
 
-[![pipeline status](https://gitlab.com/pgalmiche/repo_setter/badges/main/pipeline.svg)](https://gitlab.com/pgalmiche/repo_setter/-/commits/main) 
-[![Latest Release](https://gitlab.com/pgalmiche/repo_setter/-/badges/release.svg)](https://gitlab.com/pgalmiche/repo_setter/-/releases)
+[![pipeline status](https://gitlab.com/pgalmiche/repo-setter/badges/main/pipeline.svg)](https://gitlab.com/pgalmiche/repo-setter/-/commits/main) 
+[![Latest Release](https://gitlab.com/pgalmiche/repo-setter/-/badges/release.svg)](https://gitlab.com/pgalmiche/repo-setter/-/releases)
 
 ## Table of contents
 - [Contributor(s)](#contributors)
@@ -22,7 +22,7 @@
         - [Remove](#remove)
 - [Customization](#customization)
 - [Some useful tools](#some-useful-tools)
-    - [The repo_setter](#the-repo_setter)
+    - [The repo-setter](#the-repo-setter)
     - [Lazygit and Lazydocker](#lazygit-and-lazydocker)
 
 ## Contributors
@@ -38,13 +38,13 @@ You can find in this repository the following folders:
 
 - doc: contains the doxygen files for automatic documentation
 - install: contains the files to create and manage docker containers
-- scripts: contains the script to add the repo_setter files
+- scripts: contains the script to add the repo-setter files
 
 The files available are:
 - Makefile: contains commands for automation. See [corresponding section](#make-and-its-makefile)
 
 ### Automation with Doxygen
-[This project documentation](https://pgalmiche.gitlab.io/repo_setter/) has been automatically generated using the [doxygen software](https://www.doxygen.nl/).
+[This project documentation](https://pgalmiche.gitlab.io/repo-setter/) has been automatically generated using the [doxygen software](https://www.doxygen.nl/).
 
 The [doxygen-awesome-css](https://github.com/jothepro/doxygen-awesome-css) git submodule is used for its personalized theme.
 
@@ -54,7 +54,7 @@ The generated documentation is automatically pushed to the GitLab project page u
 
 You can clone this repo with the command:
 ```bash
-git clone https://gitlab.com/pgalmiche/repo_setter.git
+git clone https://gitlab.com/pgalmiche/repo-setter.git
 ```
 
 ### Submodules
@@ -150,13 +150,13 @@ More details are to come in this section.
 
 ## Some useful tools
 
-### The repo_setter
+### The repo-setter
 
-This project has been set up using the [repo_setter](https://gitlab.com/pgalmiche/repo_setter) git repository.
+This project has been set up using the [repo-setter](https://gitlab.com/pgalmiche/repo-setter) git repository.
 
 Its content has been added with the following command:
 ```bash
-bash -c "$(curl -fsSL https://gitlab.com/pgalmiche/repo_setter/-/raw/main/scripts/config-init)"
+curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash
 ```
 
 ### Lazygit and Lazydocker
