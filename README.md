@@ -2,6 +2,9 @@
 
 
 # Documentation
+[This project documentation](https://pgalmiche.gitlab.io/repo_setter/) has been automatically generated using the [doxygen software](https://www.doxygen.nl/).
+
+The generated documentation is automatically pushed to the GitLab project page using the `.gitlab-ci.yml` file.
 
 
 # Set up
