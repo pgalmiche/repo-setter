@@ -5,20 +5,18 @@ git clone --bare git@gitlab.com:pgalmiche/repo_setter.git ./.repo_setter
 # define config alias locally since the dotfiles
 # aren't installed on the system yet
 
-function config {
+function repo_setter {
    git --git-dir=$PWD/.repo_setter --work-tree=$PWD $@
 }
 
 # create a directory to backup existing dotfiles to
 mkdir -p .repo_setter-backup
-config checkout
+repo_setter checkout
 if [ $? = 0 ]; then
   echo "Checked out dotfiles from git@gitlab.com:pgalmiche/repo_setter.git";
   else
     echo "Moving existing dotfiles to ./.repo_setter-backup";
-    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .repo_setter-backup/{}
+    repo_setter checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .repo_setter-backup/{}
 fi
 
-# checkout dotfiles from repo
-config checkout
-config config status.showUntrackedFiles no
+rm -r ./.repo_setter
