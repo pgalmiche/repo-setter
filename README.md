@@ -4,6 +4,8 @@
 # Documentation
 [This project documentation](https://pgalmiche.gitlab.io/repo_setter/) has been automatically generated using the [doxygen software](https://www.doxygen.nl/).
 
+The [doxygen-awesome-css](https://github.com/jothepro/doxygen-awesome-css) git submodule is used for its personalized theme.
+
 The generated documentation is automatically pushed to the GitLab project page using the `.gitlab-ci.yml` file.
 
 
