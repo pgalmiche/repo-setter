@@ -19,4 +19,9 @@ if [ $? = 0 ]; then
     repo_setter checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .repo_setter-backup/{}
 fi
 
+# checkout dotfiles from repo
+repo_setter checkout
+repo_setter repo_setter status.showUntrackedFiles no
+
+# remove the repo setter once used
 rm -r ./.repo_setter
