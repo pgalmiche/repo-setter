@@ -1,0 +1,45 @@
+# To install
+numpy
+tqdm
+scikit-learn
+polyscope
+networkx
+plotly
+trimesh
+potpourri3d
+robust_laplacian
+pymesh
+opencv-python
+libigl
+matplotlib
+pyyaml
+vedo
+scipy==1.8.0
+pandas
+kaleido
+jinja2==3.1.2
+mdutils
+flask
+pymeshlab
+pydicom
+icecream
+
+# scipy 1.9.0 creates Arpack 3 error when running scipy.sparse.linalg.eigsh
+# need to use 1.8.0 for CLB good behavior
+
+# Install PyTorch and torchvision
+#torch
+#torchvision
+#torchaudio
+
+# specify versions # try in docker file first
+#torch==2.0.0+cu117
+#torchvision==0.15.1+cu117
+#torchaudio==2.0.1
+
+# pytorch3d # dealt separately
+#git+https://github.com/facebookresearch/pytorch3d.git@stable
+
+# not installed
+#setuptools==58.2.0
+#openmesh
