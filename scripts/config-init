@@ -16,7 +16,7 @@ if [ $? = 0 ]; then
   echo "Checked out files from git@gitlab.com:pgalmiche/repo_setter.git";
   else
     echo "Moving existing files to ./.repo_setter-backup";
-    repo_setter checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .repo_setter-backup/{}
+    repo_setter checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} sh -c 'mkdir -p .repo_setter-backup/$(dirname {}); mv {} .repo_setter-backup/{}'
 fi
 
 # checkout dotfiles from repo
