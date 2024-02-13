@@ -16,10 +16,9 @@
         - [Make installation](#make-installation)
         - [Make usage](#make-usage)
     - [Docker](#docker)
-        - [Build](#build)
-        - [Run](#run)
-        - [Stop](#stop)
-        - [Remove](#remove)
+        - [Docker Installation](#docker-installation)
+        - [Docker basic use](#docker-basic-use)
+        - [Docker volumes and environment variables](#docker-volumes-and-environment-variables)
 - [Customization](#customization)
 - [Some useful tools](#some-useful-tools)
     - [The repo-setter](#the-repo-setter)
@@ -108,33 +107,56 @@ When using docker, you need to:
 
 Then, according to your use, you can develop in the "running" container(s), or simply run them to run your code. 
 
-#### Build
+#### Docker Installation
+
+You can follow the instructions given in the [docker.com docs](https://docs.docker.com/engine/install/) to install docker on your computer.
+
+If you installed the Docker Desktop, you already have docker compose. Else, [follow the instructions](https://docs.docker.com/compose/install/) of the documentation.
+
+#### Docker basic use
+
+1. Build
 
 In this project, you can simply run the following to build the docker images you need:
 ```bash
 make build_docker
 ```
 
-#### Run
+Once the image is build on your computer you just need to start and stop the containers.
+
+2. Run
 
 To run your containers, use:
 ```bash
 make docker_run
 ```
 
-#### Stop
+This command will run the docker containers from the image you previously have build.
+The containers can contain servers or just run a specific command.
+
+3. Stop
 
 To stop your containers and delete them, use:
 ```bash
 make docker_stop
 ```
 
-#### Remove
+Use this command to remove the container you created, or stop them if they were not stopped (server).
 
-To remove all the docker images creates for this project, use:
+
+4. Remove
+
+Once you are done with the use of the project, you can remove all the images with:
 ```bash
 make docker_images_removal
 ```
+
+#### Docker volumes and environment variables
+
+To specify where to load/save data, you can [mount volumes](https://docs.docker.com/storage/volumes/) to your containers.
+
+Specify the important variables in the install/.env file
+
 
 ## Customization
 
