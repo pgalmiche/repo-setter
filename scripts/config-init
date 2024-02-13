@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git clone --bare git@gitlab.com:pgalmiche/repo_setter.git $PWD/.repo_setter
+git clone --bare https://gitlab.com/pgalmiche/repo-setter.git $PWD/.repo_setter
 
 # define config alias locally since the dotfiles
 # aren't installed on the system yet
@@ -13,7 +13,7 @@ function repo_setter {
 mkdir -p .repo_setter-backup
 repo_setter checkout
 if [ $? = 0 ]; then
-  echo "Checked out files from git@gitlab.com:pgalmiche/repo_setter.git";
+  echo "Checked out files from https://gitlab.com/pgalmiche/repo-setter.git";
   else
     echo "Moving existing files to ./.repo_setter-backup";
     repo_setter checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} sh -c 'mkdir -p .repo_setter-backup/$(dirname {}); mv {} .repo_setter-backup/{}'
@@ -23,4 +23,6 @@ fi
 repo_setter checkout
 
 # remove the repo setter once used
+echo ".repo_setter folder removed."
+echo "You can find in the .repo_setter-backup folder your old files"
 rm -r ./.repo_setter
