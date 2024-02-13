@@ -10,6 +10,7 @@ function repo_setter {
 }
 
 # create a directory to backup existing dotfiles to
+repo_setter checkout
 mkdir -p .repo_setter-backup
 if [ $? = 0 ]; then
   echo "Checked out dotfiles from git@gitlab.com:pgalmiche/repo_setter.git";
@@ -20,7 +21,6 @@ fi
 
 # checkout dotfiles from repo
 repo_setter checkout
-repo_setter repo_setter status.showUntrackedFiles no
 
 # remove the repo setter once used
 rm -r ./.repo_setter
