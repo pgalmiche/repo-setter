@@ -11,7 +11,6 @@ function repo_setter {
 
 # create a directory to backup existing dotfiles to
 mkdir -p .repo_setter-backup
-repo_setter checkout
 if [ $? = 0 ]; then
   echo "Checked out dotfiles from git@gitlab.com:pgalmiche/repo_setter.git";
   else
