@@ -1,0 +1,22 @@
+FROM blang/latex:ctanfull
+
+WORKDIR /usr/src/app
+
+ARG UID=1000
+ARG GID=1000
+
+ARG MYUSER=container_user
+
+# add unzip to build Blink package
+RUN apt-get update \
+    && apt-get install -y \
+    unzip \
+    && apt-get clean
+
+RUN groupadd -g "${GID}" ${MYUSER} \
+  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER} \
+  && chown ${MYUSER}:${MYUSER} -R /usr/src/app
+
+
+USER $MYUSER
+

@@ -19,16 +19,13 @@ services:
     volumes:
       - code_directory:/usr/src/app/:rw
       # The volume to chown
-      - disk:/usr/src/app/Data_these:rw
-    command: chown -R ${GID:-1000}:${UID:-1000} /usr/src/app/Data_these
+      #- disk:/usr/src/app/Data_these:rw
+    command: chown -R ${GID:-1000}:${UID:-1000} /usr/src/app/
 
 
   my_base_service:
     container_name: base_service
     user: "${GID:-1000}:${UID:-1000}"
-    volumes:
-      - code_directory:/usr/src/app/:rw
-      - disk:/usr/src/app/Data_these:rw
     working_dir: /usr/src/app
     build:
       context: .
@@ -54,22 +51,36 @@ services:
       - "python-3-10:127.0.0.1"
     environment:
       - CONFIG_FILE_PATH=configs/dashboard_config_disk.json
+    volumes:
+      - code_directory:/usr/src/app/:rw
+      - disk:/usr/src/app/Data_these:rw
 
     command: julia Dashboard_App.jl
 
   python:
     extends:
       service: my_base_service
-    container_name: python-3-10_morph
     build:
       dockerfile: Dockerfile.python
     environment:
       - DISPLAY=$DISPLAY
       - XDG_RUNTIME_DIR=/tmp/runtime-root # variable for meshlab warning
     volumes:
+      - code_directory:/usr/src/app/:rw
       - X11_unix:/tmp.X11-unix:ro
-    command: python3 flask_app.py
+    command: python3 demos/python/main.py
     privileged: true  # To avoid libGL errors
+
+  latex:
+    extends:
+      service: my_base_service
+    container_name: latex
+    build:
+      dockerfile: Dockerfile.latex
+    volumes:
+      - code_directory:/usr/src/app/:rw
+    tty: true # makes the container running even when the command is finished.
+
 
 volumes:
   disk: 
