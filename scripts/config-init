@@ -10,12 +10,12 @@ function repo_setter {
 }
 
 # create a directory to backup existing dotfiles to
-repo_setter checkout
 mkdir -p .repo_setter-backup
+repo_setter checkout
 if [ $? = 0 ]; then
-  echo "Checked out dotfiles from git@gitlab.com:pgalmiche/repo_setter.git";
+  echo "Checked out files from git@gitlab.com:pgalmiche/repo_setter.git";
   else
-    echo "Moving existing dotfiles to ./.repo_setter-backup";
+    echo "Moving existing files to ./.repo_setter-backup";
     repo_setter checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .repo_setter-backup/{}
 fi
 
