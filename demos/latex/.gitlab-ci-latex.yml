@@ -1,0 +1,14 @@
+image: blang/latex:ctanfull
+
+compile_demo:
+  stage: build
+  script:
+    - cd ./demos/latex/
+    - make
+  only:
+    changes:
+      - '**/*.tex'
+  artifacts:
+    paths:
+      - ./demo.pdf
+
