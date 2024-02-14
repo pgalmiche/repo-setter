@@ -45,7 +45,7 @@ curl https://gitlab.com/USER/YOUR_REPO/-/raw/main/scripts/config-init | bash
 
 Or you can clone it with the command:
 ```bash
-git clone YOUR_REPO_URL
+git clone YOUR_URL
 ```
 
 To install the submodules in their last version, use the command:

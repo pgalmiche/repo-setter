@@ -34,5 +34,13 @@ mv README.md.template README.md
 read -p "Enter your git username: " USER </dev/tty
 sed -i "s/USER/$USER/g" README.md
 
-read -p "Enter your git repo:" REPO </dev/tty
+read -p "Enter your git repo: " REPO </dev/tty
 sed -i "s/YOUR_REPO/$REPO/g" README.md
+
+
+DOC_URL="https://${USER}.gitlab.io/${REPO}"
+sed -i "s/YOUR_DOC_URL/$DOC_URL/g" README.md
+
+
+REPO_URL="https://gitlab.com/${USER}/${REPO}"
+sed -i "s/YOUR_URL/$REPO_URL/g" README.md
