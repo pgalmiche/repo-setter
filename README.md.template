@@ -1,15 +1,15 @@
-# Your repo
+# YOUR_REPO
 
 
-[![pipeline status](https://gitlab.com/[USER]/[YOUR_REPO]/badges/main/pipeline.svg)](https://gitlab.com/[USER]/[YOUR_REPO]/-/commits/main) 
-[![Latest Release](https://gitlab.com/[USER]/[YOUR_REPO]/-/badges/release.svg)](https://gitlab.com/[USER]/[YOUR_REPO]/-/releases)
+[![pipeline status](https://gitlab.com/USER/YOUR_REPO/badges/main/pipeline.svg)](https://gitlab.com/USER/YOUR_REPO/-/commits/main) 
+[![Latest Release](https://gitlab.com/USER/YOUR_REPO/-/badges/release.svg)](https://gitlab.com/USER/YOUR_REPO/-/releases)
 
 ## In a hurry?
 
 Open a terminal in your project folder and copy-paste the command proposed in [the script](#script) section.
 That's all, everything will be installed automatically.
 
-Find all you need in the [documentation]([YOUR_DOC_URL]).
+Find all you need in the [documentation](YOUR_DOC_URL).
  
 
 ## Table of contents
@@ -31,21 +31,21 @@ Find all you need in the [documentation]([YOUR_DOC_URL]).
 
 ## Contributors
 
-- [USER]
+- USER
 
 ## Installation
 
 ### Script
 You can initialize your repo with the following command:
 ```bash
-curl https://gitlab.com/[USER]/[YOUR_REPO]/-/raw/main/scripts/config-init | bash
+curl https://gitlab.com/USER/YOUR_REPO/-/raw/main/scripts/config-init | bash
 ```
 
 ### Manual
 
 Or you can clone it with the command:
 ```bash
-git clone [YOUR_REPO_URL]
+git clone YOUR_REPO_URL
 ```
 
 To install the submodules in their last version, use the command:
