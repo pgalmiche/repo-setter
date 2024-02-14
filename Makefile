@@ -1,4 +1,5 @@
 .PHONY: build_docker docker_run docker_stop docker docker_logs docker_images_removal create_doc firefox_dashboard docker_exec_in_python clean docker_clean_cache
+include install/.env
 help:
 	@echo "make requires some arguments with the usage: make [target]"
 	@echo ""
@@ -19,13 +20,13 @@ local_display_port := 8050
 
 build_docker:
 	@cd install/ && \
-	docker compose build --no-cache julia python
+	docker compose build --no-cache $(DOCKER_CONTAINERS)
 	@cd ..
 
 docker_run:
 	@cd install/ && \
 	xhost +local:root && \
-	docker compose up -d && \
+	docker compose up -d $(DOCKER_CONTAINERS) && \
 	echo "Old containers replaced"
 
 docker_stop:
@@ -59,8 +60,8 @@ show_doc_chrome: ./doc/html/index.html
 firefox_dashboard:
 	@firefox localhost:$(local_display_port)
 
-docker_exec_in_python:
-	@docker exec -it python-3-10_morph sh
+docker_exec:
+	@docker exec -it $(container) sh
 
 clean:
 	@rm -rf .mypy_cache

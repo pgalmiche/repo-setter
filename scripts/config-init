@@ -27,8 +27,9 @@ echo ".repo_setter folder removed."
 echo "You can find in the .repo_setter-backup folder your old files"
 rm -r ./.repo_setter
 
-rm README.md LICENSE
+rm README.md LICENSE install/.env
 mv README.md.template README.md
+mv install/.env.template install/.env
 
 # overwrite the [USER] etc in README.md
 read -p "Enter your git username: " USER </dev/tty
@@ -37,10 +38,17 @@ sed -i "s/USER/$USER/g" README.md
 read -p "Enter your git repo: " REPO </dev/tty
 sed -i "s/YOUR_REPO/$REPO/g" README.md
 
+read -p "Enter the containers to use: " CONTAINERS </dev/tty
+sed -i "s/BOXES/$CONTAINERS/g" install/.env
 
+sed -i "s/PROJECT_NAME/$REPO/g" install/.env
+sed -i "s/MYSELF/$USER/g" install/.env
+
+# set GitLab urls from the entered 
 DOC_URL="https://${USER}.gitlab.io/${REPO}"
 sed -i "s|YOUR_DOC_URL|$DOC_URL|g" README.md
 
-
-REPO_URL="https://gitlab.com/${USER}/${REPO}"
+REPO_URL="https://gitlab.com/${USER}/${REPO}.git"
 sed -i "s|YOUR_URL|$REPO_URL|g" README.md
+
+
