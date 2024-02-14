@@ -39,8 +39,8 @@ sed -i "s/YOUR_REPO/$REPO/g" README.md
 
 
 DOC_URL="https://${USER}.gitlab.io/${REPO}"
-sed -i "s/YOUR_DOC_URL/$DOC_URL/g" README.md
+sed -i "s|YOUR_DOC_URL|$DOC_URL|g" README.md
 
 
 REPO_URL="https://gitlab.com/${USER}/${REPO}"
-sed -i "s/YOUR_URL/$REPO_URL/g" README.md
+sed -i "s|YOUR_URL|$REPO_URL|g" README.md
