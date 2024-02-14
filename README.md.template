@@ -1,4 +1,4 @@
-# Repo Setter
+# Your repo
 
 
 [![pipeline status](https://gitlab.com/pgalmiche/repo-setter/badges/main/pipeline.svg)](https://gitlab.com/pgalmiche/repo-setter/-/commits/main) 
@@ -9,7 +9,7 @@
 Open a terminal in your project folder and copy-paste the command proposed in [the script](#script) section.
 That's all, everything will be installed automatically.
 
-Find all you need in the [documentation](https://pgalmiche.gitlab.io/repo-setter/).
+Find all you need in the [documentation]([YOUR_LINK]).
  
 
 ## Table of contents
@@ -18,9 +18,7 @@ Find all you need in the [documentation](https://pgalmiche.gitlab.io/repo-setter
 - [Installation](#installation)
     - [Script](#script)
     - [Manual](#manual)
-- [Utilities](#utilities)
-    - [File management](#file-management)
-    - [Automation with Doxygen](#automation-with-doxygen)
+- [Usage](#usage)
     - [Make and its Makefile](#make-and-its-makefile)
         - [Make installation](#make-installation)
         - [Make usage](#make-usage)
@@ -28,29 +26,26 @@ Find all you need in the [documentation](https://pgalmiche.gitlab.io/repo-setter
         - [Docker Installation](#docker-installation)
         - [Docker basic use](#docker-basic-use)
         - [Docker volumes and environment variables](#docker-volumes-and-environment-variables)
-- [Demos](#demos)
-- [Customization](#customization)
-- [Some useful tools](#some-useful-tools)
-    - [Lazygit and Lazydocker](#lazygit-and-lazydocker)
+- [The repo-setter](#the-repo-setter)
+- [Doxygen](#doxygen)
 
 ## Contributors
 
-- [Pierre Galmiche](https://pgalmiche.gitlab.io/)
-
+- [YOU]
 
 ## Installation
 
 ### Script
 You can initialize your repo with the following command:
 ```bash
-curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash
+[YOUR_COMMAND]
 ```
 
 ### Manual
 
 Or you can clone it with the command:
 ```bash
-git clone https://gitlab.com/pgalmiche/repo-setter.git
+git clone [YOUR_REPO_URL]
 ```
 
 To install the submodules in their last version, use the command:
@@ -58,29 +53,12 @@ To install the submodules in their last version, use the command:
 git submodule update --init --recursive
 ```
 
-## Utilities
+## Usage
 
 This project uses [docker](https://www.docker.com/) and [docker compose](https://docs.docker.com/compose/) to automatically set up its dependencies for usage or development.
 
 A [makefile](https://makefiletutorial.com/) is used to run the various commands, for development in a docker container and to generate the documentation with simple commands.
 
-### File management
-
-You can find in this repository the following folders:
-
-- doc: contains the doxygen files for automatic documentation
-- install: contains the files to create and manage docker containers
-- scripts: contains the script to add the repo-setter files
-
-The files available are:
-- Makefile: contains commands for automation. See [corresponding section](#make-and-its-makefile)
-
-### Automation with Doxygen
-[This project documentation](https://pgalmiche.gitlab.io/repo-setter/) has been automatically generated using the [doxygen software](https://www.doxygen.nl/).
-
-The [doxygen-awesome-css](https://github.com/jothepro/doxygen-awesome-css) git submodule is used for its personalized theme.
-
-The generated documentation is automatically pushed to the GitLab project page using the `.gitlab-ci.yml` file.
 
 ### Make and its Makefile
 
@@ -169,29 +147,17 @@ To specify where to load/save data, you can [mount volumes](https://docs.docker.
 
 Specify the important variables in the install/.env file
 
-## Demos
 
-You can find various demos in the corresponding folder.
-For more information, look at the [documentation](https://pgalmiche.gitlab.io/repo-setter/).
+## The repo-setter
 
-## Customization
+This project has been set up using the [repo-setter](https://gitlab.com/pgalmiche/repo-setter) git repository made by [Pierre Galmiche](https://pgalmiche.gitlab.io/) under the [MIT Licence](https://gitlab.com/pgalmiche/repo-setter/-/blob/main/LICENSE)
 
-You can customize this repo by:
+Please include this section in your README.
 
-- adding your own development code
-- adding new targets to the makefile
-- adding the .env variables for the docker volume management
-- changing the /doc/Doxyfile to personalize the documentation
-- adding scripts of your convenience/personalizing the git submodules/CI
+## Doxygen
 
-More details are to come in this section.
+[This project documentation]([YOUR_REPO_URL]) has been automatically generated using the [doxygen software](https://www.doxygen.nl/).
 
-## Some useful tools
+The [doxygen-awesome-css](https://github.com/jothepro/doxygen-awesome-css) git submodule is used for its personalized theme.
 
-### Lazygit and Lazydocker
-
-To manage your git repository and docker, you can use the powerful tools created by `Jesse Duffield`:
-
-- [Lazygit](https://github.com/jesseduffield/lazygit)
-- [Lazydocker](https://github.com/jesseduffield/lazydocker)
-
+The generated documentation is automatically pushed to the GitLab project page using the `.gitlab-ci.yml` file.
