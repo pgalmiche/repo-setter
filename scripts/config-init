@@ -32,11 +32,11 @@ mv README.md.template README.md
 
 # overwrite the [USER] etc in README.md
 echo "Enter your git username:"
-read USER
+read -s USER </dev/tty
 echo "Hello, $USER!"
 sed -i 's/[USER]/$USER/g' README.md
 
 echo "Enter your git repo name:"
-read REPO
-echo "Hello, $REPO!"
+read -s REPO </dev/tty
+echo "Git repo: $REPO!"
 sed -i 's/[YOUR_REPO]/$REPO/g' README.md
