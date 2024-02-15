@@ -13,6 +13,8 @@ services:
     image: ubuntu
     # Need a user priviliged enough to chown
     user: "root"
+    env_file:
+      - ".env"
     # Specify the group in question
     group_add:
       - '${GID:-1000}'
@@ -67,7 +69,6 @@ services:
       - XDG_RUNTIME_DIR=/tmp/runtime-root # variable for meshlab warning
     volumes:
       - code_directory:/usr/src/app/:rw
-      - X11_unix:/tmp.X11-unix:ro
     command: python3 demos/python/main.py
     privileged: true  # To avoid libGL errors
 
@@ -98,13 +99,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /media/pgalmiche/CORSAIR/Data_these
+      device: ${DISK_DEVICE} 
   code_directory: 
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: ${PWD}/../
+      device: ${CODE_DIRECTORY_DEVICE}
   X11_unix: 
     driver: local
     driver_opts:

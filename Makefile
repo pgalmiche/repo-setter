@@ -16,7 +16,8 @@ help:
 	@echo "  clean 						Removes unwanted files"
 
 
-local_display_port := 8050
+show_containers:
+	@echo "The following containers are available: $(DOCKER_CONTAINERS)"
 
 build_docker:
 	@cd install/ && \
@@ -58,7 +59,7 @@ show_doc_chrome: ./doc/html/index.html
 	google-chrome ./doc/html/index.html
 
 firefox_dashboard:
-	@firefox localhost:$(local_display_port)
+	@firefox localhost:$(LOCAL_DISPLAY_PORT)
 
 docker_exec:
 	@docker exec -it $(container) sh
