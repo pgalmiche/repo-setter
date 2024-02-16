@@ -1,4 +1,4 @@
-# Manual install for the repo_setter:
+# Manual installation:
 
 1 - Go inside your git repository in which you want to do the setup.
 2 - Create the repo with:
