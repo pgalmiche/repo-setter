@@ -38,9 +38,16 @@ sed -i "s/USER/$USER/g" README.md
 read -p "Enter your git repo: " REPO </dev/tty
 sed -i "s/YOUR_REPO/$REPO/g" README.md
 
-echo "You can choose as many as you want in: python latex julia node_js"
+echo "You can choose as many as you want in: python latex node_js"
 read -p "Enter the containers to use: " CONTAINERS </dev/tty
 sed -i "s/BOXES/$CONTAINERS/g" install/.env
+
+if [ "$CONTAINERS" == "node_js" ]; then
+    REPO_CODE="../demos/node_js/"
+else
+    REPO_CODE="../"
+fi
+sed -i "s/MYCODE/$REPO_CODE/g" install/.env
 
 sed -i "s/PROJECT_NAME/$REPO/g" install/.env
 sed -i "s/MYSELF/$USER/g" install/.env
