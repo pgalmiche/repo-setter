@@ -49,7 +49,7 @@ else
 fi
 sed -i "s|MYCODE|$REPOCODE|g" install/.env
 
-sed -i "s/PROJECT_NAME/$REPO/g" install/.env
+sed -i "s/DOCKER_NAME/$REPO/g" install/.env
 sed -i "s/MYSELF/$USER/g" install/.env
 
 # set GitLab urls from the entered 
