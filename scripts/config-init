@@ -43,11 +43,11 @@ read -p "Enter the containers to use: " CONTAINERS </dev/tty
 sed -i "s/BOXES/$CONTAINERS/g" install/.env
 
 if [ "$CONTAINERS" == "node_js" ]; then
-    REPO_CODE="../demos/node_js/"
+    REPOCODE="../demos/node_js/"
 else
-    REPO_CODE="../"
+    REPOCODE="../"
 fi
-sed -i "s/MYCODE/$REPO_CODE/g" install/.env
+sed -i "s/MYCODE/$REPOCODE/g" install/.env
 
 sed -i "s/PROJECT_NAME/$REPO/g" install/.env
 sed -i "s/MYSELF/$USER/g" install/.env
