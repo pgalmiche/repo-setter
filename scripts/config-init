@@ -52,6 +52,10 @@ sed -i "s|MYCODE|$REPOCODE|g" install/.env
 sed -i "s/DOCKER_NAME/$REPO/g" install/.env
 sed -i "s/MYSELF/$USER/g" install/.env
 
+# set the uid/gid of the current username
+sed -i "s/MYUID/$UID/g" install/.env
+sed -i "s/MYGID/$GID/g" install/.env
+
 # set GitLab urls from the entered 
 DOC_URL="https://${USER}.gitlab.io/${REPO}"
 sed -i "s|YOUR_DOC_URL|$DOC_URL|g" README.md
