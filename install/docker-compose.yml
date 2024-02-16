@@ -82,15 +82,23 @@ services:
       - code_directory:/usr/src/app/:rw
     tty: true # makes the container running even when the command is finished.
 
+
   node_js:
+    image: slides_js
     extends:
       service: my_base_service
     container_name: node_js
     build:
-      dockerfile: Dockerfile.js
+      context: .. # to add demos in build context
+      dockerfile: ./install/Dockerfile.nodejs
     volumes:
       - code_directory:/usr/src/app/:rw
-    tty: true # makes the container running even when the command is finished.
+      - /usr/src/app/node_modules
+    command: npm start
+    network_mode: bridge
+    ports:
+      - 8000:8000
+      - 35729:35729
 
 
 volumes:

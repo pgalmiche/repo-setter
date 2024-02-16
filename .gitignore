@@ -1,7 +1,6 @@
 /outputs
 /Datasets
 *.ini
-
 /doc/html/
 *.ply
 *.obj
