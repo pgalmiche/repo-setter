@@ -47,7 +47,7 @@ if [ "$CONTAINERS" == "node_js" ]; then
 else
     REPOCODE="../"
 fi
-sed -i "s/MYCODE/$REPOCODE/g" install/.env
+sed -i "s|MYCODE|$REPOCODE|g" install/.env
 
 sed -i "s/PROJECT_NAME/$REPO/g" install/.env
 sed -i "s/MYSELF/$USER/g" install/.env
