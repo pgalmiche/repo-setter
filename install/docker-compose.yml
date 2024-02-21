@@ -97,7 +97,7 @@ services:
     command: npm start
     network_mode: bridge
     ports:
-      - 8000:8000
+      - 7346:7346
       - 35729:35729
 
 
