@@ -43,15 +43,20 @@ services:
 
   my_nvim:
     container_name: nvim_pg
+    user: "${GID:-1000}:${UID:-1000}"
     working_dir: /usr/src/app/
     build:
       context: .
       dockerfile: Dockerfile.editor
+      args:
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+        - "MYUSER=${MYUSER:-container_user}"
     env_file:
       - ".env"
     volumes:
       - code_directory:/usr/src/app/:rw
-    command: nvim
+    command: /bin/bash
     tty: true
 
   julia:

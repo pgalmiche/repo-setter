@@ -1,8 +1,24 @@
 FROM ubuntu
 
+# add config
+COPY .bash_aliases ./root/
+COPY .bashrc ./root/
 
-WORKDIR /usr/src/app
-
+# download utilities
 RUN apt-get update && apt-get install -y \
+git \
 neovim \
 && rm -rf /var/lib/apt/lists/*
+
+
+# Setup env
+ARG UID=1000
+ARG GID=1000
+
+ARG MYUSER=container_user
+
+WORKDIR /usr/src/app
+RUN groupadd -g "${GID}" ${MYUSER} \
+  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER} \
+  && chown ${MYUSER}:${MYUSER} -R /usr/src/app
+USER $MYUSER

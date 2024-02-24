@@ -62,7 +62,7 @@ firefox_dashboard:
 	@firefox localhost:$(LOCAL_DISPLAY_PORT)
 
 docker_exec:
-	@docker exec -it $(container) sh
+	@docker exec -it $(container) /bin/bash
 
 clean:
 	@rm -rf .mypy_cache
