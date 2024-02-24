@@ -42,7 +42,8 @@ services:
         condition: service_completed_successfully
 
   my_nvim:
-    container_name: nvim_pg
+    container_name: neodock
+    hostname: neodock
     user: "${GID:-1000}:${UID:-1000}"
     working_dir: /home/${MYUSER:-container_user}
     build:
