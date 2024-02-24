@@ -1,8 +1,5 @@
 FROM ubuntu
 
-# add config
-COPY .bash_aliases ./root/
-COPY .bashrc ./root/
 
 # download utilities
 RUN apt-get update && apt-get install -y \
@@ -17,8 +14,15 @@ ARG GID=1000
 
 ARG MYUSER=container_user
 
-WORKDIR /usr/src/app
+
 RUN groupadd -g "${GID}" ${MYUSER} \
   && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER} \
-  && chown ${MYUSER}:${MYUSER} -R /usr/src/app
+  && chown ${MYUSER}:${MYUSER} -R /home/${MYUSER}/
 USER $MYUSER
+
+WORKDIR /home/${MYUSER}/
+# add config
+COPY .bash_aliases ./
+COPY .bashrc ./
+
+WORKDIR /home/${MYUSER}/src/

@@ -44,7 +44,7 @@ services:
   my_nvim:
     container_name: nvim_pg
     user: "${GID:-1000}:${UID:-1000}"
-    working_dir: /usr/src/app/
+    working_dir: /home/${MYUSER:-container_user}
     build:
       context: .
       dockerfile: Dockerfile.editor
@@ -55,7 +55,7 @@ services:
     env_file:
       - ".env"
     volumes:
-      - code_directory:/usr/src/app/:rw
+      - code_directory:/home/${MYUSER:-container_user}/src/:rw
     command: /bin/bash
     tty: true
 
