@@ -1,0 +1,8 @@
+FROM ubuntu
+
+
+WORKDIR /usr/src/app
+
+RUN apt-get update && apt-get install -y \
+neovim \
+&& rm -rf /var/lib/apt/lists/*
