@@ -5,6 +5,7 @@ FROM ubuntu
 RUN apt-get update && apt-get install -y \
 git \
 neovim \
+tmux \
 && rm -rf /var/lib/apt/lists/*
 
 
@@ -24,6 +25,8 @@ WORKDIR /home/${MYUSER}/
 # add config
 COPY .bash_aliases ./
 COPY .bashrc ./
+RUN mkdir .config/ && mkdir .config/nvim/
+COPY nvim/ ./.config/nvim/
 
 RUN git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
