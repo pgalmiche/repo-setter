@@ -57,7 +57,7 @@ services:
       - ".env"
     volumes:
       - code_directory:/home/${MYUSER:-container_user}/src/:rw
-    command: /bin/bash
+    command: /bin/bash && config submodule init && config submodule update
     tty: true
 
   julia:
