@@ -1,13 +1,22 @@
 FROM ubuntu
 
 
-# download utilities
+# download utilities and dependecies
 RUN apt-get update && apt-get install -y \
 git \
-neovim \
 tmux \
+ninja-build \
+gettext \
+cmake \
+unzip \
+curl \
 && rm -rf /var/lib/apt/lists/*
 
+# build and install neovim
+RUN git clone https://github.com/neovim/neovim \
+&& cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo \
+&& git checkout stable \
+&& make install
 
 # Setup env
 ARG UID=1000
