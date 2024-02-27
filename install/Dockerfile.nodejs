@@ -1,5 +1,10 @@
 # Use the official Node.js image as the base image
 FROM node:20-slim
+
+# change node user to 1001
+RUN groupmod -g 1001 node \
+  && usermod -u 1001 -g 1001 node
+
 ARG UID=1000
 ARG GID=1000
 
