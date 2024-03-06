@@ -21,8 +21,9 @@ show_containers:
 
 build_docker:
 	@cd install/ && \
-	docker compose build --no-cache $(DOCKER_CONTAINERS)
-	@cd ..
+	docker compose build --no-cache $(DOCKER_CONTAINERS) && \
+	docker builder prune -f && \
+	cd ..
 
 docker_run:
 	@cd install/ && \
