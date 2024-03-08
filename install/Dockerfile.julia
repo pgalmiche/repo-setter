@@ -11,12 +11,6 @@ RUN apt-get update \
     unzip \
     && apt-get clean
 
-# # Create a non-root user
-# RUN useradd -ms /bin/bash morphobreast_user
-# # Set ownership of the working directory to the non-root user
-# RUN chown -R morphobreast_user:morphobreast_user /usr/src/app
-# USER morphobreast_user
-
 RUN groupadd -g "${GID}" ${MYUSER} \
   && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER}
 
