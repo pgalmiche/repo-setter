@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "repo-setter-python"
+version = "0.1.0"
+description = "vedo demo in docker"
+authors = ["Pierre Galmiche"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+vedo = "^2024.5.1"
+
+[tool.poetry.group.dev.dependencies]
+icecream = "^2.1.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

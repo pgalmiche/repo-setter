@@ -12,7 +12,11 @@ libxrandr-dev \
 wget \
 && rm -rf /var/lib/apt/lists/*
 
-
+# use poetry for dependencies management
+COPY poetry.lock pyproject.toml ./
+RUN pip3 install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install -n --no-ansi
 
 RUN groupadd -g "${GID}" ${MYUSER} \
   && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER}
@@ -21,6 +25,6 @@ WORKDIR /usr/src/app
 
 USER $MYUSER
 
-COPY requirements.txt ./
-
-RUN pip3 install --no-cache-dir -r requirements.txt
+# old management with requirements
+# COPY requirements.txt ./
+# RUN pip3 install --no-cache-dir -r requirements.txt
