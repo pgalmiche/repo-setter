@@ -32,14 +32,13 @@ RUN git clone https://github.com/neovim/neovim \
 
 # add user and create its home directory.
 RUN groupadd -g "${GID}" ${MYUSER} \
-  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER} \
-  && chown ${MYUSER}:${MYUSER} -R /home/${MYUSER}/
-
-# set user: from here, user based installations
-USER $MYUSER
+  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER}
 
 # go to user directory
 WORKDIR /home/${MYUSER}/
+# set user: from here, user based installations
+USER $MYUSER
+
 
 # Install Zoxide
 RUN curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash

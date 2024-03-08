@@ -1,5 +1,4 @@
 FROM julia:1.9.3
-WORKDIR /usr/src/app
 
 ARG UID=1000
 ARG GID=1000
@@ -19,9 +18,9 @@ RUN apt-get update \
 # USER morphobreast_user
 
 RUN groupadd -g "${GID}" ${MYUSER} \
-  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER} \
-  && chown ${MYUSER}:${MYUSER} -R /usr/src/app
+  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${MYUSER}
 
+WORKDIR /usr/src/app
 
 USER $MYUSER
 
