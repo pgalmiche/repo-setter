@@ -1,0 +1,37 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git
+          git submodule update --init --recursive
+          sudo apt-get install -y make doxygen
+
+      - name: Set up submodule version
+        run: |
+          cd doc/doxygen-awesome-css
+          git checkout v2.3.1
+          cd ../..
+
+      - name: Generate Documentation
+        run: |
+          make create_doc
+          mv ./doc/html/ public
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./public
