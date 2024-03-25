@@ -12,7 +12,6 @@ services:
         - "MYUSER=${MYUSER:-container_user}"
     env_file:
       - ".env"
-    network_mode: host
 
   my_nvim:
     container_name: neodock
@@ -46,10 +45,30 @@ services:
     volumes:
       - code_directory:/usr/src/app/:rw
       - disk:/usr/src/app/Data_these:rw
+    network_mode: host
 
     command: julia Dashboard_App.jl
 
+  python-opt:
+    container_name: repo-setter-opt-python
+    extends:
+      service: my_base_service
+    build:
+      dockerfile: Dockerfile.python_optimized
+      target: app-run-stage
+      args:
+        POETRY_INSTALL_OPTS: "--no-root --with dev" # install dev dependencies during test/devel build
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - code_directory:/usr/src/app/:rw
+    # command: python demos/python/main.py
+    privileged: true # To avoid libGL errors
+    tty: true
+    network_mode: host
+
   python:
+    container_name: repo-setter-python
     extends:
       service: my_base_service
     build:
@@ -60,6 +79,7 @@ services:
       - code_directory:/usr/src/app/:rw
     command: python3 demos/python/main.py
     privileged: true # To avoid libGL errors
+    network_mode: host
 
   latex:
     extends:
@@ -78,6 +98,22 @@ services:
     build:
       context: .. # to add demos in build context
       dockerfile: ./install/Dockerfile.nodejs
+    volumes:
+      - code_directory:/usr/src/app/:rw
+      - /usr/src/app/node_modules
+    command: npm start
+    network_mode: bridge
+    ports:
+      - 7346:7346
+      - 35729:35729
+
+  node_js_opt:
+    extends:
+      service: my_base_service
+    container_name: node_js_opt
+    build:
+      context: .. # to add demos in build context
+      dockerfile: ./install/Dockerfile.nodejs_optimized
     volumes:
       - code_directory:/usr/src/app/:rw
       - /usr/src/app/node_modules
