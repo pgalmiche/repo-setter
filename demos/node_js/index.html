@@ -1,148 +1,199 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>Slides</title>
+    <title>Slides</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/moon.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
 
-				<section>
-
-          <h2>Slides template</h2>
-					<a href="https://git-scm.com/" target="_blank">
-						<img src="./img/git_logo.png" alt="reveal.js logo" style="height: 80px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-          </a>
-					<h3>Made with revealjs</h3>
-						<small>Author(s), 2024</small>
-
-        </section>
-				<section>
-
-          <h2> Not used to these slides?</h2>
-					<h3>You can navigate with:</h3>
-      <ul>
-        <li> The space bar !</li>
-        <li> By clicking on the <span style="color: blue;">blue arrows </span>. </li>
-        <li> By scrolling down on your phone</li>
-        <li> Go down first! </li>
-
-      </ul>
-        </section>
-
-				<section data-name="Section 1">
+  <body>
+    <div class="reveal">
+      <div class="slides">
         <section>
-          <h2>Video example</h2>
+          <h2>Slides template</h2>
+          <a href="https://git-scm.com/" target="_blank">
+            <img
+              src="./img/git_logo.png"
+              alt="reveal.js logo"
+              style="
+                height: 80px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+              class="demo-logo"
+            />
+          </a>
+          <h3>Made with revealjs</h3>
+          <small>Author(s), 2024</small>
+        </section>
+
+        <section>
+          <h2>Not used to these slides?</h2>
+          <h3>You can navigate with:</h3>
+          <ul>
+            <li>The space bar !</li>
+            <li>
+              By clicking on the <span style="color: blue">blue arrows </span>.
+            </li>
+            <li>By scrolling down on your phone</li>
+            <li>Go down first!</li>
+          </ul>
+        </section>
+
+        <section data-name="Section 1">
+          <section>
+            <h2>Video example</h2>
             <div class="container">
               <div class="col">
                 <ol>
-                  <li>Use <a target="_blank" href="https://gitlab.com">GitLab link</a>.</li>
+                  <li>
+                    Use
+                    <a target="_blank" href="https://gitlab.com">GitLab link</a
+                    >.
+                  </li>
                   <li>Specify details.</li>
                   <li>Not too much.</li>
                 </ol>
               </div>
               <div class="col">
                 <video controls muted>
-                  <source data-src="./videos/demo_gitlab_repo.mp4" type="video/mp4" />
+                  <source
+                    data-src="./videos/demo_gitlab_repo.mp4"
+                    type="video/mp4"
+                  />
                 </video>
               </div>
             </div>
-				</section>
+          </section>
 
-        <section>
-
+          <section>
             <h2>Slide with Iframe</h2>
             <div class="iframe-container">
               <iframe src="./iframes/deltas_hist.html"></iframe>
             </div>
-        </section>
-        <section>
+          </section>
+
+          <section>
             <h2>Slide with 3D Iframe</h2>
             <div class="iframe-container">
               <iframe src="./iframes/CT_and_AH32S33vectors.html"></iframe>
             </div>
-        </section>
-  
-        <section>
+          </section>
+
+          <section>
             <h2>Slide test</h2>
             <div class="iframe-container">
               <iframe src="./iframes/test_surfaces.html"></iframe>
             </div>
-        </section>
+          </section>
 
-        <section>
+          <section>
             <h2>Slide other test with hist</h2>
             <div class="iframe-container">
-              <iframe src="./iframes/deltas_ROI_euclidean_precise_NN.html"></iframe>
+              <iframe
+                src="./iframes/deltas_ROI_euclidean_precise_NN.html"
+              ></iframe>
             </div>
-        </section>
+          </section>
 
-<section data-auto-animate>
-  <h2 data-id="code-title">You can present code!</h2>
-      <ol>
-        <li class="fragment fade-in-then-semi-out">
-          <p>A first with cd</p>
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+          <section data-markdown>
+            <textarea data-template>
+              ## Slide 1
+
+              A simple test of markdown with a <a href="https://revealjs.com/markdown/" target="_blank">Link!</a>
+
+              ### You can add subtitles
+
+              And the things refer to.
+
+              ### Images
+              ![Image](./img/git_logo.png)
+
+              ---
+              ## Slide 2
+
+              ### You can have various slides.
+
+              With $\alpha$ maths in it.
+            </textarea>
+          </section>
+
+          <section data-auto-animate>
+            <h2 data-id="code-title">You can present code!</h2>
+            <ol>
+              <li class="fragment fade-in-then-semi-out">
+                <p>A first with cd</p>
+                <pre
+                  data-id="code-animation"
+                ><code class="hlterminal" data-trim>
 cd awesome-project/
           </code></pre>
-        </li>
-        <li class="fragment fade-in-then-semi-out">
-          <p>Another with text</p>
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+              </li>
+              <li class="fragment fade-in-then-semi-out">
+                <p>Another with text</p>
+                <pre
+                  data-id="code-animation"
+                ><code class="hlterminal" data-trim>
 In this file we add marvelous things.
           </code></pre>
-        </li>
-        <li class="fragment fade-in-then-semi-out">
-          <p>And a bash command</p>
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+              </li>
+              <li class="fragment fade-in-then-semi-out">
+                <p>And a bash command</p>
+                <pre
+                  data-id="code-animation"
+                ><code class="hlterminal" data-trim>
           git status
           </code></pre>
-        </li>
-      </ol>
-				</section>
+              </li>
+            </ol>
+          </section>
 
-
-<section>
-    <h2>Auto animate to help you</h2>
-      <ul>
-        <li class="fragment fade-in-then-semi-out">
-          <p>If you are lost, use the documentation</p>
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+          <section>
+            <h2>Auto animate to help you</h2>
+            <ul>
+              <li class="fragment fade-in-then-semi-out">
+                <p>If you are lost, use the documentation</p>
+                <pre
+                  data-id="code-animation"
+                ><code class="hlterminal" data-trim>
             man
           </code></pre>
-        </li>
-        <li class="fragment fade-in-then-semi-out">
-          <p>Then, look where you are and what to do.</p>
-        </li>
-      </ul>
-      <span style="display: inline-block;" class="fragment fade-up">
-  <div class="container">
-    Let's look at a code example.</span>
-    </div>
+              </li>
+              <li class="fragment fade-in-then-semi-out">
+                <p>Then, look where you are and what to do.</p>
+              </li>
+            </ul>
+            <span style="display: inline-block" class="fragment fade-up">
+              <div class="container">Let's look at a code example.</div></span
+            >
+          </section>
 
-				</section>
-
-<section data-auto-animate> 
-    <h2>Auto animate for code display</h2>
-  <div class="container">
-    <div class="col">
-      <li> a first detail </li> 
-  <br>
-  <br>
-  <span style="display: inline-block;" class="fragment fade-up"> You can comment after </span>
-    </div>
-    <div class="col">
-      <pre data-id="code-animation"><code class="hljs bash" data-trim data-line-numbers="1,2"><script type="text/template">
+          <section data-auto-animate>
+            <h2>Auto animate for code display</h2>
+            <div class="container">
+              <div class="col">
+                <li>a first detail</li>
+                <br />
+                <br />
+                <span style="display: inline-block" class="fragment fade-up">
+                  You can comment after
+                </span>
+              </div>
+              <div class="col">
+                <pre
+                  data-id="code-animation"
+                ><code class="hljs bash" data-trim data-line-numbers="1,2"><script type="text/template">
       on branch main
       your branch is up to date with 'origin/main'.
 
@@ -152,44 +203,45 @@ In this file we add marvelous things.
 
       nothing added to commit but untracked files present (use "git add" to track)
       </script></code></pre>
-    </div>
-  </div>
-</section>
+              </div>
+            </div>
+          </section>
 
-<section data-auto-animate>
-    <h2>Auto animate for code display</h2>
-  <div class="container">
-    <div class="col">
-      <li> a second detail </li> 
-    </div>
-    <div class="col">
-<pre data-id="code-animation"><code class="hljs bash" data-trim data-line-numbers="4-6"><script type="text/template">
-On branch main
-Your branch is up to date with 'origin/main'.
+          <section data-auto-animate>
+            <h2>Auto animate for code display</h2>
+            <div class="container">
+              <div class="col">
+                <li>a second detail</li>
+              </div>
+              <div class="col">
+                <pre
+                  data-id="code-animation"
+                ><code class="hljs bash" data-trim data-line-numbers="4-6"><script type="text/template">
+                  On branch main
+                Your branch is up to date with 'origin/main'.
 
-Untracked files:
-  (use "git add 'file'..." to include in what will be committed)
-        awesome_file.txt
+                Untracked files:
+                  (use "git add 'file'..." to include in what will be committed)
+                        awesome_file.txt
 
-nothing added to commit but untracked files present (use "git add" to track)
-</script></code></pre>
-    </div>
-  </div>
-</section>
-<section data-auto-animate>
-    <h2>Auto animate for code display</h2>
-  <div class="container">
-    <div class="col">
-      <li> a third detail </li> 
-  </br>
-  </br>
-  <span style="display: inline-block;" class="fragment fade-up">
-  <div class="container">
-    And tabular bullets ?!</span>
-    </div>
-    </div>
-    <div class="col">
-      <pre data-id="code-animation"><code class="hljs bash" data-trim data-line-numbers="8"><script type="text/template">
+                nothing added to commit but untracked files present (use "git add" to track)
+              </script></code></pre>
+              </div>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <h2>Auto animate for code display</h2>
+            <div class="container">
+              <div class="col">
+                <li>a third detail</li>
+                <span style="display: inline-block" class="fragment fade-up">
+                  <div class="container">And tabular bullets ?!</div></span
+                >
+              </div>
+              <div class="col">
+                <pre
+                  data-id="code-animation"
+                ><code class="hljs bash" data-trim data-line-numbers="8"><script type="text/template">
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -199,105 +251,134 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
       </script></code></pre>
-    </div>
-  </div>
-</section>
-</section>
+              </div>
+            </div>
+          </section>
+        </section>
 
-				
+        <section data-name="Section 2">
+          <section>
+            <h2 data-id="code-title">4 bullets</h2>
 
-<section data-name="Section 2">
-  
-<section>
-  <h2 data-id="code-title">4 bullets</h2>
-
-  You can use 4 bullets like:
-  <div class="container">
-    <div class="col">
-      <ul>
-        <li class="fragment fade-in-then-semi-out">
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+            You can use 4 bullets like:
+            <div class="container">
+              <div class="col">
+                <ul>
+                  <li class="fragment fade-in-then-semi-out">
+                    <pre
+                      data-id="code-animation"
+                    ><code class="hlterminal" data-trim>
           First info
           </code></pre>
-          <p>with details</p>
-        </li>
-        <li class="fragment fade-in-then-semi-out">
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+                    <p>with details</p>
+                  </li>
+                  <li class="fragment fade-in-then-semi-out">
+                    <pre
+                      data-id="code-animation"
+                    ><code class="hlterminal" data-trim>
           second info
           </code></pre>
-          <p>with other details </p>
-        </li>
-      </ul>
-    </div>
-    <div class="col">
-      <ul>
-        <li class="fragment fade-in-then-semi-out">
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+                    <p>with other details</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul>
+                  <li class="fragment fade-in-then-semi-out">
+                    <pre
+                      data-id="code-animation"
+                    ><code class="hlterminal" data-trim>
           another column
           </code></pre>
-          <p>always with some insights</p>
-        </li>
+                    <p>always with some insights</p>
+                  </li>
 
-        <li class="fragment fade-in-then-semi-out">
-          <pre data-id="code-animation"><code class="hlterminal" data-trim>
+                  <li class="fragment fade-in-then-semi-out">
+                    <pre
+                      data-id="code-animation"
+                    ><code class="hlterminal" data-trim>
           a final note
           </code></pre>
-          <p>to go to next slide</p>
-        </li>
-    </div>
-      </ul> 
-  </section>
+                    <p>to go to next slide</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-  <section>
-    <h2>Only title</h2>
-  </section>
-
+          <section>
+            <h2>You can do Math too</h2>
+            <div class="container">
+              <div class="col">
+                <li class="fragment fade-in-then-semi-out">
+                  $C_{ij}C_{jk}C_{ki} = I$
+                </li>
+                <li class="fragment fade-in-then-semi-out">
+                  <p>with other details</p>
+                </li>
+              </div>
+              <div class="col">
+                <img
+                  id="otherimg"
+                  src="./img/git_logo.png"
+                  width="400px"
+                  height="auto"
+                />
+              </div>
+            </div>
+          </section>
         </section>
-<section data-name="Animated title">
-		
-  <section data-background="https://media.giphy.com/media/l3vR2AOJ3Rf8qbl4I/giphy.gif">
-<h2 data-id="code-title">You want to go back in time?</h2>
-  </section>
 
-</section>
+        <section data-name="Animated title">
+          <section
+            data-background="https://media.giphy.com/media/l3vR2AOJ3Rf8qbl4I/giphy.gif"
+          >
+            <h2 data-id="code-title">And use GIFs!</h2>
+          </section>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-    <script src="plugin/simplemenu/simplemenu.js"></script>
-    <script src="plugin/math/math.js"></script>
-		<script type="module">
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/simplemenu/simplemenu.js"></script>
+        <script src="plugin/math/math.js"></script>
+        <script type="module">
+          // More info about initialization & config:
+          // - https://revealjs.com/initialization/
+          // - https://revealjs.com/config/
 
-
-      Reveal.initialize({
-				hash: true,
-        // Set the auto slide duration in milliseconds
-        //autoSlide: 5000, 
-        // force size but can result in small texts
-        //width: 1920,
-        //height: 1400,
-        center: true,
-        showProgress: false,
-        transition: "convex", // slide
-        slideNumber: "c/t",
-        simplemenu: {
-                barhtml: {
-                    header: "<div id='menuheader' class='menubar'><a class='logo' href='#'><img id='menuimg' src='./img/git_logo.png'></a><ul class='menu'></ul><div class='slide-number'></div></div>",
-                    footer: "<div id='menufooter' class='menubar'><div class='title'>Slides</div><div class='author'>Author</div></div>"
-                },
-                csspath: "./css/mycustomstyle.css"
+          Reveal.initialize({
+            hash: true,
+            // Set the auto slide duration in milliseconds
+            //autoSlide: 5000,
+            // force size but can result in small texts
+            //width: 1920,
+            //height: 1400,
+            center: true,
+            showProgress: false,
+            transition: "convex", // slide
+            slideNumber: "c/t",
+            simplemenu: {
+              barhtml: {
+                header:
+                  "<div id='menuheader' class='menubar'><a class='logo' href='#'><img id='menuimg' src='./img/git_logo.png'></a><ul class='menu'></ul><div class='slide-number'></div></div>",
+                footer:
+                  "<div id='menufooter' class='menubar'><div class='title'>Slides</div><div class='author'>Author</div></div>",
+              },
+              csspath: "./css/mycustomstyle.css",
             },
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX,  RevealNotes, Simplemenu ]
-      }).then(() => {
-      });
-
-
-
-		</script>
-	</body>
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [
+              RevealMarkdown,
+              RevealHighlight,
+              RevealMath.KaTeX,
+              RevealNotes,
+              Simplemenu,
+            ],
+          }).then(() => {});
+        </script>
+      </div>
+    </div>
+  </body>
 </html>
