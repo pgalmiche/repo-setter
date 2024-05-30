@@ -1,6 +1,6 @@
 # importing torch
 import os
-
+from platform import python_version
 import matplotlib
 import matplotlib.pyplot as plt
 import torch
@@ -19,7 +19,11 @@ def display_cuda_info():
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     myprint = (
-        "Initialization of Torch using: "
+        "Python "
+        + str(python_version())
+        + " initialization of Torch "
+        + torch.__version__
+        + " using: "
         + str(nb_GPU)
         + " available GPUs and "
         + str(device)
