@@ -7,6 +7,7 @@ import torch
 from torchrbf import RBFInterpolator
 
 matplotlib.use("TKAgg")
+import kaolin as kao
 
 
 def display_cuda_info():
@@ -57,6 +58,13 @@ def run_demo_torchrbf():
     plt.show()
 
 
+def test_kaolin():
+    _ = torch.random.manual_seed(1)
+    octree = kao.ops.random.random_spc_octrees(2, 3, device=0)
+    print("octree: ", octree)
+
+
 if __name__ == "__main__":
     display_cuda_info()
     run_demo_torchrbf()
+    test_kaolin()
