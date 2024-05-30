@@ -123,6 +123,37 @@ services:
       - 7346:7346
       - 35729:35729
 
+  torch:
+    extends:
+      service: my_base_service
+    container_name: torch_repo-setter
+
+    build:
+      context: .
+      dockerfile: Dockerfile.pytorch
+
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - code_directory:/usr/src/app/:rw
+    # volumes:
+    #   # - X11_unix:/tmp.X11-unix:ro
+    #   - X_authority:/root/.Xauthority:rw"
+
+    # this command makes the container never stop
+    # useful for navigating in it with docker exec
+    #command: tail -f /dev/null
+    #
+    command: python3 torch_computations.py
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    network_mode: host
+
 volumes:
   disk:
     driver: local

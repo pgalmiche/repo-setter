@@ -1,0 +1,58 @@
+# importing torch
+import os
+
+import matplotlib
+import matplotlib.pyplot as plt
+import torch
+from torchrbf import RBFInterpolator
+
+matplotlib.use("TKAgg")
+
+
+def display_cuda_info():
+    # get index of currently selected device
+    torch.cuda.current_device()
+    # get number of GPUs available
+    nb_GPU = torch.cuda.device_count()
+    # get the name of the device
+    device_name = torch.cuda.get_device_name(0)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    myprint = (
+        "Initialization of Torch using: "
+        + str(nb_GPU)
+        + " available GPUs and "
+        + str(device)
+        + " device called "
+        + device_name
+    )
+    os.system("echo " + myprint)
+
+
+def run_demo_torchrbf():
+    y = torch.rand(100, 2)  # Data coordinates
+    d = torch.rand(100, 3)  # Data vectors at each point
+
+    print("Computing RBF using torch ...")
+    interpolator = RBFInterpolator(y, d, smoothing=1.0, kernel="thin_plate_spline")
+    print("Computation done.")
+
+    print("Begin display:")
+    # Query coordinates (100x100 grid of points)
+    x = torch.linspace(0, 1, 100)
+    y = torch.linspace(0, 1, 100)
+    grid_points = torch.meshgrid(x, y, indexing="ij")
+    grid_points = torch.stack(grid_points, dim=-1).reshape(-1, 2)
+
+    # Query RBF on grid points
+    interp_vals = interpolator(grid_points)
+
+    # Plot the interpolated values in 2D
+    plt.scatter(grid_points[:, 0], grid_points[:, 1], c=interp_vals[:, 0])
+    plt.title("Interpolated values in 2D")
+    plt.show()
+
+
+if __name__ == "__main__":
+    display_cuda_info()
+    run_demo_torchrbf()
