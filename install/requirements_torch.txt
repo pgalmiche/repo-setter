@@ -1,3 +1,12 @@
 matplotlib
 torchrbf
 
+# Install PyTorch and torchvision
+torch==2.1.1+cu121 
+torchvision 
+torchaudio 
+-f https://download.pytorch.org/whl/cu121/torch_stable.html
+
+# Install kaolin
+kaolin==0.15.0 
+-f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.1.1_cu121.html
