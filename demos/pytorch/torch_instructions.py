@@ -7,7 +7,8 @@ TORCH_API_URL = "http://torch_repo-setter:5000"  # Assuming the PyTorch containe
 
 
 def compute():
-    time.sleep(5)
+    # wait the time the torch container loads
+    time.sleep(3)
     try:
         response = requests.get(f"{TORCH_API_URL}/perform-computation")
         response.raise_for_status()  # Raise an exception for HTTP errors

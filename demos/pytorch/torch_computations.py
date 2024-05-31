@@ -11,15 +11,6 @@ import kaolin as kao
 
 from fastapi import FastAPI
 
-app = FastAPI()
-
-
-@app.get("/perform-computation")
-async def perform_computation():
-    # Perform PyTorch computation here
-    result = {"result": 42}  # Placeholder result
-    return result
-
 
 def display_cuda_info():
     # get index of currently selected device
@@ -73,12 +64,27 @@ def test_kaolin():
     _ = torch.random.manual_seed(1)
     octree = kao.ops.random.random_spc_octrees(2, 3, device=0)
     print("octree: ", octree)
+    return octree
+
+
+app = FastAPI()
+
+
+@app.get("/perform-computation")
+async def perform_computation():
+    # Perform PyTorch computation here
+    display_cuda_info()
+    run_demo_torchrbf()
+    octree = test_kaolin()
+    # need to convert to cpu first and then to numpy to extract a list to share
+    np_octree = octree[0].cpu().numpy().tolist()
+    print("octree list: ", np_octree)
+
+    result = {"result": np_octree}  # Placeholder result
+    return result
 
 
 if __name__ == "__main__":
     import uvicorn
 
-    display_cuda_info()
-    run_demo_torchrbf()
-    test_kaolin()
     uvicorn.run(app, host="0.0.0.0", port=5000)
