@@ -123,6 +123,27 @@ services:
       - 7346:7346
       - 35729:35729
 
+  # test python instructor with requests + torch with fastAPI to make the computations
+  python_torch:
+    extends:
+      service: my_base_service
+    container_name: python_torch_repo-setter
+
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - code_directory:/usr/src/app/:rw
+    command: python3 torch_instructions.py
+    depends_on:
+      - torch
+    network_mode: host
+    extra_hosts:
+      - "torch_repo-setter:127.0.0.1"
+
   torch:
     extends:
       service: my_base_service

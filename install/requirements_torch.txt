@@ -1,3 +1,14 @@
 matplotlib
 torchrbf
 
+# Install PyTorch and torchvision
+torch==2.1.1 
+torchvision
+torchaudio
+
+# Install kaolin (which needs pytorch)
+kaolin==0.15.0 
+
+# For REST API
+fastapi
+uvicorn

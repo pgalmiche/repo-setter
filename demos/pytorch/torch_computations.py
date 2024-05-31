@@ -9,6 +9,17 @@ from torchrbf import RBFInterpolator
 matplotlib.use("TKAgg")
 import kaolin as kao
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/perform-computation")
+async def perform_computation():
+    # Perform PyTorch computation here
+    result = {"result": 42}  # Placeholder result
+    return result
+
 
 def display_cuda_info():
     # get index of currently selected device
@@ -65,6 +76,9 @@ def test_kaolin():
 
 
 if __name__ == "__main__":
+    import uvicorn
+
     display_cuda_info()
     run_demo_torchrbf()
     test_kaolin()
+    uvicorn.run(app, host="0.0.0.0", port=5000)

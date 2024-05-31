@@ -12,22 +12,36 @@ RUN apt-get update && \
         python3-opencv \
         libglib2.0-0 \
         libx11-dev \
-        python3-tk
+        python3-tk \
+        wget
 # libx11-dev and python3-tk for matplotlib display?
 
-# Install any python packages you need
+# # test with uv
+#
+# # install uv for faster python installations
+# ENV VIRTUAL_ENV=/usr/local
+# ADD --chmod=755 https://astral.sh/uv/install.sh /install.sh
+# RUN /install.sh && rm /install.sh
+#  
+#
+# # Set additional package indexes (optional)
+# ARG PYTORCH_INDEX=https://download.pytorch.org/whl/cu121/torch_stable.html
+# ARG KAOLIN_INDEX=https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.1.1_cu121.html
+#
+# # Copy requirements file
+# COPY requirements_torch.txt requirements_torch.txt
+#
+#  
+# RUN /root/.cargo/bin/uv pip install --no-cache -r requirements_torch.txt \
+#     --index-url=${PYTORCH_INDEX}, ${KAOLIN_INDEX}
+
+# Install any python packages you need with pip
+
 COPY requirements_torch.txt requirements_torch.txt
 
-RUN python3 -m pip install -r requirements_torch.txt
-
-# Upgrade pip
-RUN python3 -m pip install --upgrade pip
-
-# Install PyTorch and torchvision
-RUN pip3 install torch==2.1.1+cu121 torchvision torchaudio -f https://download.pytorch.org/whl/cu121/torch_stable.html
-
-# Install kaolin
-RUN pip3 install kaolin==0.15.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.1.1_cu121.html
+RUN python3 -m pip install -r requirements_torch.txt \
+-f https://download.pytorch.org/whl/cu121/torch_stable.html \
+-f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.1.1_cu121.html
 
 # Set the working directory
 WORKDIR /usr/src/app
