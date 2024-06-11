@@ -76,7 +76,7 @@ services:
       - DISPLAY=$DISPLAY
     volumes:
       - code_directory:/usr/src/app/:rw
-    command: python3 demos/python/app.py
+    command: python3 demos/python/dashboard.py
     privileged: true # To avoid libGL errors
     network_mode: host
 
