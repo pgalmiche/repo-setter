@@ -42,7 +42,7 @@ app.layout = html.Div(
             [
                 html.Br(),
                 html.P(
-                    "Multi-Page Dash-Plotly Web App",
+                    "My interesting project",
                     className="text-dark text-center fw-bold fs-1",
                 ),
                 dash.page_container,
@@ -54,4 +54,4 @@ app.layout = html.Div(
 )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=7777, debug=True)

@@ -6,5 +6,5 @@
 *.obj
 *.pyc
 .vscode
-
+/data
  
