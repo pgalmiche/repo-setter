@@ -33,7 +33,7 @@ docker_run:
 docker_stop:
 	@cd install/ && \
 	docker compose down --volumes --remove-orphans && \
-	docker builder prune -f && \
+	docker builder prune -f
 	
 docker_clean_cache:
 	@docker builder prune -f && \
