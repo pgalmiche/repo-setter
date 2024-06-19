@@ -71,6 +71,17 @@ if [ -d "scripts" ]; then
     rm -rf "scripts"
 fi
 
+# Handle CI choice for documentation or using first container CI
+read -p "Choose CI purpose: Enter 'doc' for documentation CI or any other key to use first container CI: " CI_PURPOSE </dev/tty
+
+if [ "$CI_PURPOSE" == "doc" ]; then
+    echo "Setting up CI for documentation."
+    # No change needed to gitlab-ci.yml
+else
+    echo "Setting up CI for the first container chosen: $FIRST_CONTAINER"
+    cp "ci_files/.gitlab-ci-${FIRST_CONTAINER}.yml" .gitlab-ci.yml
+fi
+
 # Remove the 'demos' folder if it exists
 if [ -d "demos" ]; then
     echo "Removing 'demos' directory."
