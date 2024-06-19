@@ -42,12 +42,70 @@ echo "You can choose as many as you want in: python latex node_js"
 read -p "Enter the containers to use: " CONTAINERS </dev/tty
 sed -i "s/BOXES/$CONTAINERS/g" install/.env
 
-if [ "$CONTAINERS" == "node_js" ]; then
-    REPOCODE="../demos/node_js/"
-else
-    REPOCODE="../"
+
+# Extract the first container chosen
+FIRST_CONTAINER=$(echo $CONTAINERS | awk '{print $1}')
+
+# Move each container directory from 'demos' to the root directory
+for CONTAINER in $CONTAINERS; do
+    SRC_DIR="demos/$CONTAINER"
+    TARGET_DIR="./$CONTAINER"
+    if [ -d "$SRC_DIR" ]; then
+        echo "Moving $SRC_DIR to $TARGET_DIR in the root directory."
+        mkdir -p "$TARGET_DIR"
+        mv "$SRC_DIR"/* "$TARGET_DIR/"
+    else
+        echo "Warning: $SRC_DIR does not exist."
+    fi
+done
+
+# Set the REPOCODE path to be inside the first container chosen
+if [ -n "$FIRST_CONTAINER" ]; then
+    REPOCODE="../$FIRST_CONTAINER/"
+    sed -i "s|MYCODE|$REPOCODE|g" install/.env
 fi
-sed -i "s|MYCODE|$REPOCODE|g" install/.env
+
+# Remove the 'scripts' folder if it exists
+if [ -d "scripts" ]; then
+    echo "Removing 'scripts' directory."
+    rm -rf "scripts"
+fi
+
+# Remove the 'demos' folder if it exists
+if [ -d "demos" ]; then
+    echo "Removing 'demos' directory."
+    rm -rf "demos"
+fi
+
+# Keep only Dockerfiles corresponding to chosen containers
+DOCKERFILES_TO_KEEP=()
+for CONTAINER in $CONTAINERS; do
+    DOCKERFILES_TO_KEEP+=("Dockerfile.${CONTAINER}")
+done
+
+echo "Keeping Dockerfiles: ${DOCKERFILES_TO_KEEP[*]}"
+for FILE in install/Dockerfile.*; do
+    if [[ ! " ${DOCKERFILES_TO_KEEP[*]} " =~ $(basename "$FILE") ]]; then
+        echo "Removing $FILE as it does not correspond to any chosen container."
+        rm -f "$FILE"
+    fi
+done
+
+# Check if any of the chosen containers include 'python'
+if [[ " ${CONTAINERS[*]} " =~ "python" ]]; then
+    echo "Python is one of the chosen containers. Keeping Python-related files."
+else
+    echo "Python is not among the chosen containers. Removing Python-related files."
+    rm -f install/pyproject.toml install/requirements.txt 
+fi
+
+# Check if any of the chosen containers include 'python'
+if [[ " ${CONTAINERS[*]} " =~ "pytorch" ]]; then
+    echo "Pytorch is one of the chosen containers. Keeping Pytorch-related files."
+else
+    echo "Pytorch is not among the chosen containers. Removing Pytorch-related files."
+    rm -f install/requirements_torch.txt 
+fi
 
 sed -i "s/DOCKER_NAME/$REPO/g" install/.env
 sed -i "s/MYSELF/$USER/g" install/.env

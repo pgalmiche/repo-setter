@@ -27,7 +27,6 @@ build_docker:
 
 docker_run:
 	@cd install/ && \
-	xhost +local:root && \
 	docker compose up -d $(DOCKER_CONTAINERS) && \
 	echo "Old containers replaced"
 
@@ -35,7 +34,6 @@ docker_stop:
 	@cd install/ && \
 	docker compose down --volumes --remove-orphans && \
 	docker builder prune -f && \
-	xhost -local:root
 	
 docker_clean_cache:
 	@docker builder prune -f && \

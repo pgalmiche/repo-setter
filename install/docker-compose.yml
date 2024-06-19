@@ -77,7 +77,7 @@ services:
     volumes:
       - code_directory:/usr/src/app/:rw
       - disk:/usr/src/app/external_data/:rw
-    command: python3 demos/python/dashboard.py
+    command: python3 main.py
     privileged: true # To avoid libGL errors
     network_mode: host
 
@@ -97,7 +97,7 @@ services:
     container_name: node_js
     build:
       context: .. # to add demos in build context
-      dockerfile: ./install/Dockerfile.nodejs
+      dockerfile: ./install/Dockerfile.node_js
     volumes:
       - code_directory:/usr/src/app/:rw
       - /usr/src/app/node_modules
