@@ -33,9 +33,9 @@ var NAVTREE =
         [ "Script", "index.html#autotoc_md5", null ],
         [ "Manual", "index.html#autotoc_md6", null ]
       ] ],
-      [ "Utilities", "index.html#autotoc_md7", [
+      [ "Dependencies", "index.html#autotoc_md7", [
         [ "File management", "index.html#autotoc_md8", null ],
-        [ "Automation with Doxygen", "index.html#autotoc_md9", null ],
+        [ "Documentation automation with Doxygen", "index.html#autotoc_md9", null ],
         [ "Make and its Makefile", "index.html#autotoc_md10", [
           [ "Make installation", "index.html#autotoc_md11", null ],
           [ "Make usage", "index.html#autotoc_md12", null ]
