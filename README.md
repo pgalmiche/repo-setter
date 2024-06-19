@@ -5,8 +5,11 @@
 
 ## In a hurry?
 
+### For a new repository
+
 1. Create a git repository
 2. Clone it
+
 3. Open a terminal in the repository folder and copy-paste the command proposed in [the script](#script) section:
 
    ```bash
@@ -16,6 +19,21 @@
    Answer the questions in the terminal to set your preferences and everything will be installed automatically.
 
 4. Push and enjoy the CI and repo ready to modify for your project.
+
+### For an existing repository
+
+1. Open a terminal in the repository folder and copy-paste the command proposed in [the script](#script) section:
+
+   ```bash
+   curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash
+   ```
+
+   Answer the questions in the terminal to set your preferences and everything will be installed automatically.
+
+   **Note:** If you repository already contains files the repo-setter is adding, those files are replaced and backed up in
+   the _.repo_setter-backup_ folder.
+
+2. Push and enjoy the CI and repo ready to modify for your project.
 
 For more details, look at the [documentation](https://pgalmiche.gitlab.io/repo-setter/).
 
