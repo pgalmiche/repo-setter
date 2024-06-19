@@ -26,37 +26,43 @@ var NAVTREE =
 [
   [ "repo-setter", "index.html", [
     [ "Repo Setter", "index.html", [
-      [ "In a hurry?", "index.html#autotoc_md1", null ],
-      [ "Table of contents", "index.html#autotoc_md2", null ],
-      [ "Contributors", "index.html#autotoc_md3", null ],
-      [ "Installation", "index.html#autotoc_md4", [
-        [ "Script", "index.html#autotoc_md5", null ],
-        [ "Manual", "index.html#autotoc_md6", null ]
+      [ "In a hurry?", "index.html#autotoc_md1", [
+        [ "For a new repository", "index.html#autotoc_md2", null ],
+        [ "For an existing repository", "index.html#autotoc_md3", null ]
       ] ],
-      [ "Dependencies", "index.html#autotoc_md7", [
-        [ "File management", "index.html#autotoc_md8", null ],
-        [ "Documentation automation with Doxygen", "index.html#autotoc_md9", null ],
-        [ "Make and its Makefile", "index.html#autotoc_md10", [
-          [ "Make installation", "index.html#autotoc_md11", null ],
-          [ "Make usage", "index.html#autotoc_md12", null ]
+      [ "Table of contents", "index.html#autotoc_md4", null ],
+      [ "Contributors", "index.html#autotoc_md5", null ],
+      [ "Installation", "index.html#autotoc_md6", [
+        [ "Script", "index.html#autotoc_md7", null ],
+        [ "Manual", "index.html#autotoc_md8", null ]
+      ] ],
+      [ "Dependencies", "index.html#autotoc_md9", [
+        [ "File management", "index.html#autotoc_md10", null ],
+        [ "Documentation automation with Doxygen", "index.html#autotoc_md11", null ],
+        [ "Make and its Makefile", "index.html#autotoc_md12", [
+          [ "Make installation", "index.html#autotoc_md13", null ],
+          [ "Make usage", "index.html#autotoc_md14", null ]
         ] ],
-        [ "Docker", "index.html#autotoc_md13", [
-          [ "Docker Installation", "index.html#autotoc_md14", null ],
-          [ "Docker basic use", "index.html#autotoc_md15", null ],
-          [ "Docker volumes and environment variables", "index.html#autotoc_md16", null ]
+        [ "Docker", "index.html#autotoc_md15", [
+          [ "Docker Installation", "index.html#autotoc_md16", null ],
+          [ "Docker basic use", "index.html#autotoc_md17", null ],
+          [ "Docker volumes and environment variables", "index.html#autotoc_md18", null ]
+        ] ],
+        [ "Gitlab-ci", "index.html#autotoc_md19", [
+          [ "Side Note:", "index.html#autotoc_md20", null ]
         ] ]
       ] ],
-      [ "Demos", "index.html#autotoc_md17", null ],
-      [ "Customization", "index.html#autotoc_md18", null ],
-      [ "Some useful tools", "index.html#autotoc_md19", [
-        [ "Lazygit and Lazydocker", "index.html#autotoc_md20", null ]
+      [ "Demos", "index.html#autotoc_md21", null ],
+      [ "Customization", "index.html#autotoc_md22", null ],
+      [ "Some useful tools", "index.html#autotoc_md23", [
+        [ "Lazygit and Lazydocker", "index.html#autotoc_md24", null ]
       ] ]
     ] ],
     [ "Demos", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html", [
-      [ "Available demos", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md22", [
-        [ "python", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md23", null ],
-        [ "latex", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md24", null ],
-        [ "node_js", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md25", null ]
+      [ "Available demos", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md26", [
+        [ "python", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md27", null ],
+        [ "latex", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md28", null ],
+        [ "node_js", "md__home_runner_work_repo_setter_repo_setter_demos_demos.html#autotoc_md29", null ]
       ] ]
     ] ],
     [ "Packages", "namespaces.html", [
@@ -84,7 +90,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"namespacerelationship.html#af23304751d6b3b2d30127e48984d7d0a"
+"namespacerelationship.html#aab5d5511bc892916e5e9bf3b9b37f7d1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -100,11 +100,31 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p>Look at the content <a class="anchor" id="md__home_runner_work_repo_setter_repo_setter_README"></a> <a href="https://gitlab.com/pgalmiche/repo-setter/-/commits/main"><img src="https://gitlab.com/pgalmiche/repo-setter/badges/main/pipeline.svg" alt="pipeline status" style="pointer-events: none;" class="inline"/></a> <a href="https://gitlab.com/pgalmiche/repo-setter/-/releases"><img src="https://gitlab.com/pgalmiche/repo-setter/-/badges/release.svg" alt="Latest Release" style="pointer-events: none;" class="inline"/></a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 In a hurry?</h1>
-<p>Open a terminal in your project folder and copy-paste the command proposed in <a href="#script">the script</a> section:</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+For a new repository</h2>
+<ol type="1">
+<li>Create a git repository</li>
+<li>Clone it</li>
+<li>Open a terminal in the repository folder and copy-paste the command proposed in <a href="#script">the script</a> section:</li>
+</ol>
 <div class="fragment"><div class="line">curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash</div>
 </div><!-- fragment --><p>Answer the questions in the terminal to set your preferences and everything will be installed automatically.</p>
+<ol type="1">
+<li>Push and enjoy the CI and repo ready to modify for your project.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md3"></a>
+For an existing repository</h2>
+<ol type="1">
+<li>Open a terminal in the repository folder and copy-paste the command proposed in <a href="#script">the script</a> section:</li>
+</ol>
+<div class="fragment"><div class="line">curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash</div>
+</div><!-- fragment --><p>Answer the questions in the terminal to set your preferences and everything will be installed automatically.</p>
+<p><b>Note:</b> If you repository already contains files the repo-setter is adding, those files are replaced and backed up in the _.repo_setter-backup_ folder.</p>
+<ol type="1">
+<li>Push and enjoy the CI and repo ready to modify for your project.</li>
+</ol>
 <p>For more details, look at the <a href="https://pgalmiche.gitlab.io/repo-setter/">documentation</a>.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Table of contents</h1>
 <p>&lt;details&gt;</p>
 <ul>
@@ -139,36 +159,36 @@ Table of contents</h1>
 </li>
 </ul>
 <p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Contributors</h1>
 <ul>
 <li><a href="https://pgalmiche.gitlab.io/">Pierre Galmiche</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Installation</h1>
 <p>&lt;details&gt;</p>
 <p>With a script </p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Script</h2>
 <p>You can initialize your repo with the following command:</p>
 <div class="fragment"><div class="line">curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
 <p>&lt;details&gt;</p>
 <p>Manually </p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Manual</h2>
 <p>Or you can clone it with the command:</p>
 <div class="fragment"><div class="line">git clone https://gitlab.com/pgalmiche/repo-setter.git</div>
 </div><!-- fragment --><p>To install the submodules in their last version, use the command:</p>
 <div class="fragment"><div class="line">git submodule update --init --recursive</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Dependencies</h1>
 <p>This project uses <a href="https://www.docker.com/">docker</a> and <a href="https://docs.docker.com/compose/">docker compose</a> to automatically set up its dependencies for usage or development.</p>
 <p>A <a href="https://makefiletutorial.com/">makefile</a> is used to run the various commands, for development in a docker container and to generate the documentation with simple commands.</p>
 <p>&lt;details&gt;</p>
 <p>Files organization </p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 File management</h2>
 <p>You can find in this repository the following folders:</p>
 <ul>
@@ -182,21 +202,21 @@ File management</h2>
 </ul>
 <p>&lt;details&gt;</p>
 <p>Automatic documentation </p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Documentation automation with Doxygen</h2>
 <p><a href="https://pgalmiche.gitlab.io/repo-setter/">This project documentation</a> has been automatically generated using the <a href="https://www.doxygen.nl/">doxygen software</a>.</p>
 <p>The <a href="https://github.com/jothepro/doxygen-awesome-css">doxygen-awesome-css</a> git submodule is used for its personalized theme.</p>
 <p>The generated documentation is automatically pushed to the GitLab project page using the <code>.gitlab-ci.yml</code> file.</p>
 <p>&lt;/details&gt; &lt;details&gt;</p>
 <p>Makefile usage </p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Make and its Makefile</h2>
-<h3><a class="anchor" id="autotoc_md11"></a>
+<h3><a class="anchor" id="autotoc_md13"></a>
 Make installation</h3>
 <p>On Ubuntu, your can use the command:</p>
 <div class="fragment"><div class="line">sudo apt install build-essential</div>
 <div class="line">sudo apt install make</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md14"></a>
 Make usage</h3>
 <p>Simply run:</p>
 <div class="fragment"><div class="line">make</div>
@@ -208,7 +228,7 @@ Make usage</h3>
 <p>&lt;/details&gt;</p>
 <p>&lt;details&gt;</p>
 <p>Docker usage </p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Docker</h2>
 <p>When using docker, you need to:</p>
 <ul>
@@ -218,11 +238,11 @@ Docker</h2>
 <li>4. (optional) Remove the docker image(s) from you computer</li>
 </ul>
 <p>Then, according to your use, you can develop in the "running" container(s), or simply run them to run your code.</p>
-<h3><a class="anchor" id="autotoc_md14"></a>
+<h3><a class="anchor" id="autotoc_md16"></a>
 Docker Installation</h3>
 <p>You can follow the instructions given in the <a href="https://docs.docker.com/engine/install/">docker.com docs</a> to install docker on your computer.</p>
 <p>If you installed the Docker Desktop, you already have docker compose. Else, <a href="https://docs.docker.com/compose/install/">follow the instructions</a> of the documentation.</p>
-<h3><a class="anchor" id="autotoc_md15"></a>
+<h3><a class="anchor" id="autotoc_md17"></a>
 Docker basic use</h3>
 <ol type="1">
 <li>Build</li>
@@ -247,17 +267,41 @@ Docker basic use</h3>
 </ol>
 <p>Once you are done with the use of the project, you can remove all the images with:</p>
 <div class="fragment"><div class="line">make docker_images_removal</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md16"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md18"></a>
 Docker volumes and environment variables</h3>
 <p>To specify where to load/save data, you can <a href="https://docs.docker.com/storage/volumes/">mount volumes</a> to your containers.</p>
 <p>Specify the important variables in the install/.env file</p>
 <p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<p>&lt;details&gt;</p>
+<p>About the CI </p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Gitlab-ci</h2>
+<p>By default, if your project is private, your gitlab page is:</p>
+<ul>
+<li>with a unique domain</li>
+<li>private</li>
+</ul>
+<p>To solve those problems you can:</p>
+<ol type="1">
+<li><p class="startli">Set up a reusable domain:</p>
+<p class="startli">You can go to Deploy&gt;Pages and unselect the "Use unique domain" to let your page available</p>
+<p class="startli">at <code><a href="https://you.gitlab.io/your-repo-name">https://you.gitlab.io/your-repo-name</a></code>.</p>
+</li>
+<li><p class="startli">Make your page public while the repo stays private.</p>
+<p class="startli">You can go to Settings&gt;General&gt;Visibility, project features, permissions and scroll to pages. Then, select "Everyone" instead of "Only Project Members."</p>
+</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md20"></a>
+Side Note:</h3>
+<p>If you tried to go to the page while in its unique domain version, your web browser might try again to this link and redirect to it even if you fixed the domain.</p>
+<p>To solve this problem, simply delete the cache/history of your web browser and try again.</p>
+<p>&lt;/details&gt;</p>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Demos</h1>
 <p>You can find various demos in the corresponding folder. For more information, look at the <a href="https://pgalmiche.gitlab.io/repo-setter/">documentation</a>.</p>
 <p>&lt;details&gt;</p>
 <p>To go further in the configuration </p>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 Customization</h1>
 <p>You can customize this repo by:</p>
 <ul>
@@ -268,9 +312,9 @@ Customization</h1>
 <li>adding scripts of your convenience/personalizing the git submodules/CI</li>
 </ul>
 <p>More details are to come in this section.</p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 Some useful tools</h1>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Lazygit and Lazydocker</h2>
 <p>To manage your git repository and docker, you can use the powerful tools created by <code>Jesse Duffield</code>:</p>
 <ul>
@@ -283,7 +327,7 @@ Lazygit and Lazydocker</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Jun 19 2024 12:53:21 for repo-setter by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Jun 19 2024 13:43:45 for repo-setter by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
