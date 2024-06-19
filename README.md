@@ -5,13 +5,17 @@
 
 ## In a hurry?
 
-Open a terminal in your project folder and copy-paste the command proposed in [the script](#script) section:
+1. Create a git repository
+2. Clone it
+3. Open a terminal in the repository folder and copy-paste the command proposed in [the script](#script) section:
 
-```bash
-curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash
-```
+   ```bash
+   curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash
+   ```
 
-Answer the questions in the terminal to set your preferences and everything will be installed automatically.
+   Answer the questions in the terminal to set your preferences and everything will be installed automatically.
+
+4. Push and enjoy the CI and repo ready to modify for your project.
 
 For more details, look at the [documentation](https://pgalmiche.gitlab.io/repo-setter/).
 
@@ -213,6 +217,38 @@ make docker_images_removal
 To specify where to load/save data, you can [mount volumes](https://docs.docker.com/storage/volumes/) to your containers.
 
 Specify the important variables in the install/.env file
+
+</details>
+
+<details>
+  <summary>About the CI</summary>
+
+### Gitlab-ci
+
+By default, if your project is private, your gitlab page is:
+
+- with a unique domain
+- private
+
+To solve those problems you can:
+
+1. Set up a reusable domain:
+
+   You can go to Deploy>Pages and unselect the "Use unique domain" to let your page available
+
+   at `https://you.gitlab.io/your-repo-name`.
+
+2. Make your page public while the repo stays private.
+
+   You can go to Settings>General>Visibility, project features, permissions and scroll to pages.
+   Then, select "Everyone" instead of "Only Project Members."
+
+#### Side Note:
+
+If you tried to go to the page while in its unique domain version, your web browser might try again to this link and redirect to it
+even if you fixed the domain.
+
+To solve this problem, simply delete the cache/history of your web browser and try again.
 
 </details>
 
