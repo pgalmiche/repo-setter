@@ -6,14 +6,16 @@ pages:
     paths:
       - node_modules/
   script:
+    - mkdir public
+    - cd node_js/
     - npm install
     - npm run build
-    - mkdir public
     - mv dist/ public/
     - mv plugin/ public/
     - mv css/ public/
     - mv img/ public/
     - mv videos/ public/
+    - mv iframes/ ../public/
     - mv index.html public/index.html
   artifacts:
     paths:
