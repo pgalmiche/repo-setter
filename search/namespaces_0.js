@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_11',['main',['../namespacemain.html',1,'']]]
+  ['app_78',['app',['../namespaceapp.html',1,'']]],
+  ['avg_5ffeature_79',['avg_feature',['../namespaceavg__feature.html',1,'']]]
 ];

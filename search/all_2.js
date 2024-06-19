@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_4',['main',['../namespacemain.html',1,'']]],
-  ['main_2epy_5',['main.py',['../main_8py.html',1,'']]]
+  ['brand_5flink_7',['brand_link',['../namespacedashboard.html#ac6168b098c580ac452087be81e4698c7',1,'dashboard']]]
 ];
