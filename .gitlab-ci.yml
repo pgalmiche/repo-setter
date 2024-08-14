@@ -8,7 +8,7 @@ pages:
   #   - sphinx
   stage: deploy
   script:
-    - python3 -m pip install sphinx sphinx_rtd_theme sphinx-tabs myst_parser numpy k3d vedo colour
+    - python3 -m pip install sphinx sphinx_rtd_theme sphinx-tabs myst_parser numpy vtk k3d vedo colour
     - sphinx-build docs/src/ public/
   artifacts:
     paths:
