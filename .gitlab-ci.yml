@@ -8,9 +8,8 @@ pages:
   #   - sphinx
   stage: deploy
   script:
-    - cd ./docs/
     - python3 -m pip install sphinx sphinx_rtd_theme sphinx-tabs myst_parser
-    - sphinx-build /src/ ../public/
+    - sphinx-build docs/src/ public/
   artifacts:
     paths:
       - public
