@@ -25,6 +25,7 @@ To show the power of 3D animations, we show the documentation of the
     .. group-tab:: Meshes
 
         .. code-block:: python
+          :emphasize-lines: 7,8, 28 
 
             from SimExporter.core import Exporter
 

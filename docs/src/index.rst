@@ -8,6 +8,9 @@ repo-setter
 This HTML file can then be opened in any browsers on any laptop,
 is can then be easily integrated into a website or presentation slides like reveal js.
 
+.. warning::
+   The documentation is not complete yet, this version is
+   only used to test the CI on GitHub and GitLab.
 
 Features
 --------
@@ -18,6 +21,9 @@ Features
 * a makefile to simplify docker usage 
 * automatic documentation tools like Sphinx or Doxygen
 
+.. note::
+   The folder/files organization has been inspired from the SimExporter GitHub project
+   make by RobinEnjalbert.
 
 Gallery
 -------

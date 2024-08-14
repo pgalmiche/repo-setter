@@ -1,20 +1,17 @@
+image: python:3.10-alpine
+
+stages:
+  - deploy
+
 pages:
+  tags:
+    - sphinx
   stage: deploy
-  image: ubuntu:latest
-  before_script:
-    - apt-get update
-    - apt-get install -y git  # Install Git
-    - git submodule update --init --recursive  # Clone the submodule repository
-    - apt-get install -y make doxygen # Install Doxygen
   script:
-    - cd ./doc/doxygen-awesome-css
-    - git checkout v2.3.1
-    - cd ../..
-    - make create_doc  # Generate the documentation using your make command
-    - mv ./doc/html/ public
+    - python3 -m pip install sphinx sphinx_rtd_theme sphinx-tabs myst_parser
+    - sphinx-build docs/src/ public/
   artifacts:
     paths:
       - public
   only:
     - main
-
