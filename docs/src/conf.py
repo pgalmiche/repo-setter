@@ -72,4 +72,4 @@ extlinks = {
     "Docker": ("https://www.docker.com/%s", "%s"),
 }
 
-# autodoc_mock_imports = ["Sofa"]
+autodoc_mock_imports = ["vtk", "vedo"]
