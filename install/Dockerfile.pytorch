@@ -43,6 +43,8 @@ RUN python3 -m pip install -r requirements_torch.txt \
 -f https://download.pytorch.org/whl/cu121/torch_stable.html \
 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.1.1_cu121.html
 
+# Install pytorch 3D (which needs pytorch): run after as wheel requires pytorch
+RUN python3 -m pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
 # Set the working directory
 WORKDIR /usr/src/app
 
