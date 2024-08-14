@@ -17,6 +17,11 @@ dash-bootstrap-components="1.3.1"
 pandas="*"
 scikit-learn="*"
 
+# for the documentation
+sphinx = {version = "<7.0.0"}
+sphinx-rtd-theme = "*"
+sphinx-tabs="*"
+
 [tool.poetry.group.dev.dependencies]
 icecream = "^2.1.3"
 

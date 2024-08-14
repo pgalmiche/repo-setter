@@ -5,6 +5,16 @@
 from vedo import *
 
 
+class DemoTest:
+    """Another class to test documentation"""
+
+    def __init__(self) -> None:
+        pass
+
+    def print_useful(self, other):
+        print(f"{other} has been printed.")
+
+
 class DemoDisplay:
     """
     Class for the python demo display of the repo-setter project.

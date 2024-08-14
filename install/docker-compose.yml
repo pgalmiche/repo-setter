@@ -77,7 +77,7 @@ services:
     volumes:
       - code_directory:/usr/src/app/:rw
       - disk:/usr/src/app/external_data/:rw
-    command: python3 main.py
+    command: python3 ./demos/python/dashboard.py
     privileged: true # To avoid libGL errors
     network_mode: host
 

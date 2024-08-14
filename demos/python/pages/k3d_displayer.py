@@ -7,7 +7,7 @@ dash.register_page(__name__, path="/k3d", name=("3D views",), order=4)
 
 ####################### WIDGETS ################################
 # List all files in the directory
-directory = "./data/"
+directory = "./external_data/"
 all_files = os.listdir(directory)
 
 # Filter HTML files
