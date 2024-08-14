@@ -4,8 +4,8 @@ stages:
   - deploy
 
 pages:
-  tags:
-    - sphinx
+  # tags:
+  #   - sphinx
   stage: deploy
   script:
     - python3 -m pip install sphinx sphinx_rtd_theme sphinx-tabs myst_parser
