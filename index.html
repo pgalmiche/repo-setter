@@ -1,142 +1,367 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<!-- HTML header for doxygen 1.9.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>repo-setter &mdash; repo-setter  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
-      <link rel="stylesheet" type="text/css" href="_static/theme.css?v=556d74e5" />
-
-  
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Demo" href="demo.html" /> 
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>repo-setter: Repo Setter</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+        <script type="text/javascript">
+            DoxygenAwesomeDarkModeToggle.init()
+        </script>
+        <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+        <script type="text/javascript">
+            DoxygenAwesomeFragmentCopyButton.init()
+        </script>
 </head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="#" class="icon icon-home">
-            repo-setter
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="repository.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">repo-setter
+   </div>
+   <div id="projectbrief">This project aims at automating the creation of git repos with tools like Doxygen, CI, and Docker.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">How to use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
-</ul>
-
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">repo-setter</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">repo-setter</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="repo-setter">
-<h1>repo-setter<a class="headerlink" href="#repo-setter" title="Link to this heading"></a></h1>
-<p><strong>repo-setter</strong> is a project aiming at starting projects with powerful tools like docker,
-<a class="extlink-K3D reference external" href="http://www.k3d-jupyter.org/">K3D</a> for 3D animations exported in a standalone HTML file.</p>
-<p>This HTML file can then be opened in any browsers on any laptop,
-is can then be easily integrated into a website or presentation slides like reveal js.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The documentation is not complete yet, this version is
-only used to test the CI on GitHub and GitLab.</p>
-</div>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
-<p><strong>repo-setter</strong> provides:</p>
-<ul class="simple">
-<li><p>docker templates for latex/python/julia/nodejs projects</p></li>
-<li><p>a makefile to simplify docker usage</p></li>
-<li><p>automatic documentation tools like Sphinx or Doxygen</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The folder/files organization has been inspired from the SimExporter GitHub project
-make by RobinEnjalbert.</p>
-</div>
-</section>
-<section id="gallery">
-<h2>Gallery<a class="headerlink" href="#gallery" title="Link to this heading"></a></h2>
-<img alt="_images/repository.png" src="_images/repository.png" />
-<div class="toctree-wrapper compound">
-</div>
-</section>
-</section>
-
-
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="demo.html" class="btn btn-neutral float-right" title="Demo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
     </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright Pierre Galmiche, 2024.</p>
   </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
-      </div>
-    </section>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
 
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Repo Setter </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2repo-setter_2repo-setter_2README"></a> <a href="https://gitlab.com/pgalmiche/repo-setter/-/commits/main"><img src="https://gitlab.com/pgalmiche/repo-setter/badges/main/pipeline.svg" alt="pipeline status" style="pointer-events: none;" class="inline"/></a> <a href="https://gitlab.com/pgalmiche/repo-setter/-/releases"><img src="https://gitlab.com/pgalmiche/repo-setter/-/badges/release.svg" alt="Latest Release" style="pointer-events: none;" class="inline"/></a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+In a hurry?</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+For a new repository</h2>
+<ol type="1">
+<li>Create a git repository</li>
+<li>Clone it</li>
+<li><p class="startli">Open a terminal in the repository folder and copy-paste the command proposed in the script section:</p>
+<div class="fragment"><div class="line">curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash</div>
+</div><!-- fragment --><p class="startli">Answer the questions in the terminal to set your preferences and everything will be installed automatically.</p>
+</li>
+<li>Push and enjoy the CI and repo ready to modify for your project.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md3"></a>
+For an existing repository</h2>
+<ol type="1">
+<li><p class="startli">Open a terminal in the repository folder and copy-paste the command proposed in the script section:</p>
+<div class="fragment"><div class="line">curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash</div>
+</div><!-- fragment --><p class="startli">Answer the questions in the terminal to set your preferences and everything will be installed automatically.</p>
+<p class="startli"><b>Note:</b> If you repository already contains files the repo-setter is adding, those files are replaced and backed up in the _.repo_setter-backup_ folder.</p>
+</li>
+<li>Push and enjoy the CI and repo ready to modify for your project.</li>
+</ol>
+<p>For more details, look at the <a href="https://pgalmiche.gitlab.io/repo-setter/">documentation</a>.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Table of contents</h1>
+<details >
+<summary >
+Look at the content</summary>
+<p></p>
+<ul>
+<li>In a hurry?</li>
+<li>Contributor(s)</li>
+<li>Installation<ul>
+<li>Script</li>
+<li>Manual</li>
+</ul>
+</li>
+<li>Utilities<ul>
+<li>File management</li>
+<li>Automation with Doxygen</li>
+<li>Make and its Makefile<ul>
+<li>Make installation</li>
+<li>Make usage</li>
+</ul>
+</li>
+<li>Docker<ul>
+<li>Docker Installation</li>
+<li>Docker basic use</li>
+<li>Docker volumes and environment variables</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Demos</li>
+<li>Customization</li>
+<li>Some useful tools<ul>
+<li>Lazygit and Lazydocker</li>
+</ul>
+</li>
+</ul>
+<p></p>
+</details>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Contributors</h1>
+<ul>
+<li><a href="https://pgalmiche.gitlab.io/">Pierre Galmiche</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Installation</h1>
+<details >
+<summary >
+With a script</summary>
+<p></p>
+</details>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Script</h2>
+<p>You can initialize your repo with the following command:</p>
+<div class="fragment"><div class="line">curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | bash</div>
+</div><!-- fragment --><details >
+<summary >
+Manually</summary>
+<p></p>
+</details>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Manual</h2>
+<p>Or you can clone it with the command:</p>
+<div class="fragment"><div class="line">git clone https://gitlab.com/pgalmiche/repo-setter.git</div>
+</div><!-- fragment --><p>To install the submodules in their last version, use the command:</p>
+<div class="fragment"><div class="line">git submodule update --init --recursive</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+Dependencies</h1>
+<p>This project uses <a href="https://www.docker.com/">docker</a> and <a href="https://docs.docker.com/compose/">docker compose</a> to automatically set up its dependencies for usage or development.</p>
+<p>A <a href="https://makefiletutorial.com/">makefile</a> is used to run the various commands, for development in a docker container and to generate the documentation with simple commands.</p>
+<details >
+<summary >
+Files organization</summary>
+<p></p>
+<p></p>
+</details>
+<h2><a class="anchor" id="autotoc_md10"></a>
+File management</h2>
+<p>You can find in this repository the following folders:</p>
+<ul>
+<li>doc: contains the doxygen files for automatic documentation</li>
+<li>install: contains the files to create and manage docker containers</li>
+<li>scripts: contains the script to add the repo-setter files</li>
+</ul>
+<p>The files available are:</p>
+<ul>
+<li>Makefile: contains commands for automation. See corresponding section </li>
+</ul>
+<details >
+<summary >
+Automatic documentation</summary>
+<p></p>
+</details>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Documentation automation with Doxygen</h2>
+<p><a href="https://pgalmiche.gitlab.io/repo-setter/">This project documentation</a> has been automatically generated using the <a href="https://www.doxygen.nl/">doxygen software</a>.</p>
+<p>The <a href="https://github.com/jothepro/doxygen-awesome-css">doxygen-awesome-css</a> git submodule is used for its personalized theme.</p>
+<p>The generated documentation is automatically pushed to the GitLab project page using the <code>.gitlab-ci.yml</code> file.</p>
+<details >
+<summary >
+Makefile usage</summary>
+<p></p>
+<p></p>
+</details>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Make and its Makefile</h2>
+<h3><a class="anchor" id="autotoc_md13"></a>
+Make installation</h3>
+<p>On Ubuntu, your can use the command:</p>
+<div class="fragment"><div class="line">sudo apt install build-essential</div>
+<div class="line">sudo apt install make</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md14"></a>
+Make usage</h3>
+<p>Simply run:</p>
+<div class="fragment"><div class="line">make</div>
+</div><!-- fragment --><p>to see the possible recipes.</p>
+<p>The help will show you how to use it: <code>make [target]</code>.</p>
+<p>Example:</p>
+<div class="fragment"><div class="line">make clean</div>
+</div><!-- fragment --><p>will clean the folder by removing unwanted files.</p>
+<details >
+<summary >
+Docker usage </summary>
+<p></p>
+<p></p>
+</details>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Docker</h2>
+<p>When using docker, you need to:</p>
+<ul>
+<li>1. Build <code>image(s)</code> (an image is like a virtual machine with all the required dependencies in it)</li>
+<li>2. Run the image(s) in a <code>container</code> (equivalent to turning on the virtual machine)</li>
+<li>3. Stop the container when you no longer need it.</li>
+<li>4. (optional) Remove the docker image(s) from you computer</li>
+</ul>
+<p>Then, according to your use, you can develop in the "running" container(s), or simply run them to run your code.</p>
+<h3><a class="anchor" id="autotoc_md16"></a>
+Docker Installation</h3>
+<p>You can follow the instructions given in the <a href="https://docs.docker.com/engine/install/">docker.com docs</a> to install docker on your computer.</p>
+<p>If you installed the Docker Desktop, you already have docker compose. Else, <a href="https://docs.docker.com/compose/install/">follow the instructions</a> of the documentation.</p>
+<h3><a class="anchor" id="autotoc_md17"></a>
+Docker basic use</h3>
+<ol type="1">
+<li>Build</li>
+</ol>
+<p>In this project, you can simply run the following to build the docker images you need:</p>
+<div class="fragment"><div class="line">make build_docker</div>
+</div><!-- fragment --><p>Once the image is build on your computer you just need to start and stop the containers.</p>
+<ol type="1">
+<li>Run</li>
+</ol>
+<p>To run your containers, use:</p>
+<div class="fragment"><div class="line">make docker_run</div>
+</div><!-- fragment --><p>This command will run the docker containers from the image you previously have build. The containers can contain servers or just run a specific command.</p>
+<ol type="1">
+<li>Stop</li>
+</ol>
+<p>To stop your containers and delete them, use:</p>
+<div class="fragment"><div class="line">make docker_stop</div>
+</div><!-- fragment --><p>Use this command to remove the container you created, or stop them if they were not stopped (server).</p>
+<ol type="1">
+<li>Remove</li>
+</ol>
+<p>Once you are done with the use of the project, you can remove all the images with:</p>
+<div class="fragment"><div class="line">make docker_images_removal</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md18"></a>
+Docker volumes and environment variables</h3>
+<p>To specify where to load/save data, you can <a href="https://docs.docker.com/storage/volumes/">mount volumes</a> to your containers.</p>
+<p>Specify the important variables in the install/.env file</p>
+<details >
+<summary >
+About the CI</summary>
+<p></p>
+<p></p>
+</details>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Gitlab-ci</h2>
+<p>By default, if your project is private, your gitlab page is:</p>
+<ul>
+<li>with a unique domain</li>
+<li>private</li>
+</ul>
+<p>To solve those problems you can:</p>
+<ol type="1">
+<li><p class="startli">Set up a reusable domain:</p>
+<p class="startli">You can go to Deploy&gt;Pages and unselect the "Use unique domain" to let your page available</p>
+<p class="startli">at <code><a href="https://you.gitlab.io/your-repo-name">https://you.gitlab.io/your-repo-name</a></code>.</p>
+</li>
+<li><p class="startli">Make your page public while the repo stays private.</p>
+<p class="startli">You can go to Settings&gt;General&gt;Visibility, project features, permissions and scroll to pages. Then, select "Everyone" instead of "Only Project Members."</p>
+</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md20"></a>
+Side Note:</h3>
+<p>If you tried to go to the page while in its unique domain version, your web browser might try again to this link and redirect to it even if you fixed the domain.</p>
+<p>To solve this problem, simply delete the cache/history of your web browser and try again.</p>
+<h1><a class="anchor" id="autotoc_md21"></a>
+Demos</h1>
+<p>You can find various demos in the corresponding folder. For more information, look at the <a href="https://pgalmiche.gitlab.io/repo-setter/">documentation</a>.</p>
+<details >
+<summary >
+To go further in the configuration</summary>
+<p></p>
+<p></p>
+</details>
+<h1><a class="anchor" id="autotoc_md22"></a>
+Customization</h1>
+<p>You can customize this repo by:</p>
+<ul>
+<li>adding your own development code</li>
+<li>adding new targets to the makefile</li>
+<li>adding the .env variables for the docker volume management</li>
+<li>changing the /doc/Doxyfile to personalize the documentation</li>
+<li>adding scripts of your convenience/personalizing the git submodules/CI</li>
+</ul>
+<p>More details are to come in this section.</p>
+<h1><a class="anchor" id="autotoc_md23"></a>
+Some useful tools</h1>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Lazygit and Lazydocker</h2>
+<p>To manage your git repository and docker, you can use the powerful tools created by <code>Jesse Duffield</code>:</p>
+<ul>
+<li><a href="https://github.com/jesseduffield/lazygit">Lazygit</a></li>
+<li><a href="https://github.com/jesseduffield/lazydocker">Lazydocker</a> </li>
+</ul>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated on Wed Oct 2 2024 09:30:39 for repo-setter by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>
