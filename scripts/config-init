@@ -82,21 +82,11 @@ else
     cp "ci_files/.gitlab-ci-${FIRST_CONTAINER}.yml" .gitlab-ci.yml
 fi
 
-# Check if the 'demos' folder exists
+# Remove demo as files have been moved
 if [ -d "demos" ]; then
-    # Prompt the user for input
-    read -p "The 'demos' directory exists. Do you want to remove it? (y/n): " response
-    
-    # Check if the user's input is 'y' or 'Y'
-    if [[ "$response" == "y" || "$response" == "Y" ]]; then
-        echo "Removing 'demos' directory."
-        rm -rf "demos"
-    else
-        echo "'demos' directory will not be removed."
-    fi
-else
-    echo "'demos' directory does not exist."
-fi
+    echo "Removing 'demos' directory."
+    rm -rf "demos"
+fi 
 
 # Keep only Dockerfiles corresponding to chosen containers
 DOCKERFILES_TO_KEEP=()
