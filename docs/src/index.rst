@@ -2,9 +2,10 @@
 repo-setter
 ===========
 
-**repo-setter** is a project aiming at starting projects with powerful tools like docker,
-:K3D:`K3D <>` for 3D animations exported in a standalone HTML file.
+**repo-setter** is a project aiming at starting projects that can be run inside docker
+containers.
 
+:K3D:`K3D <>` is used for 3D animations exported in a standalone HTML file.
 This HTML file can then be opened in any browsers on any laptop,
 is can then be easily integrated into a website or presentation slides like reveal js.
 

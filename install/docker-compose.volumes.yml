@@ -1,0 +1,41 @@
+services:
+  my_nvim:
+    working_dir: /home/${MYUSER:-container_user}
+    volumes:
+      - code_directory:/home/${MYUSER:-container_user}/src/:rw
+
+  julia:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+
+  python:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+
+  latex:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+
+  node_js:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+      - /usr/src/app/node_modules
+
+  python_torch:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+
+  torch:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+    # volumes:
+    #   # - X11_unix:/tmp.X11-unix:ro
+    #   - X_authority:/root/.Xauthority:rw"
+
+volumes:
+  code_directory:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${CODE_DIRECTORY_DEVICE}

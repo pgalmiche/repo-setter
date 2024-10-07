@@ -1,4 +1,4 @@
-.PHONY: build_docker docker_run docker_stop docker docker_logs docker_images_removal create_doc firefox_dashboard docker_exec_in_python clean docker_clean_cache
+.PHONY: docker-build docker-run docker-stop docker-run-disk docker-logs docker-remove-images create-doc run-firefox-dashboard docker-exec clean docker-clean-cache
 include install/.env
 help:
 	@echo "make requires some arguments with the usage: make [target]"
@@ -16,52 +16,60 @@ help:
 	@echo "  clean 						Removes unwanted files"
 
 
-show_containers:
-	@echo "The following containers are available: $(DOCKER_CONTAINERS)"
+# Docker related
 
-build_docker:
+docker-build:
 	@cd install/ && \
 	docker compose build --no-cache $(DOCKER_CONTAINERS) && \
 	docker builder prune -f && \
 	cd ..
 
-docker_run:
+docker-run:
 	@cd install/ && \
-	docker compose up -d $(DOCKER_CONTAINERS) && \
+	docker compose -f docker-compose.yml -f docker-compose.volumes.yml up -d $(DOCKER_CONTAINERS) && \
+	echo "Old containers replaced"
+docker-exec:
+	@docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}" && \
+	read -p "Enter the container name or ID: " container && \
+	docker exec -it $$container /bin/bash
+docker-run-disk:
+	@cd install/ && \
+	docker compose -f docker-compose.yml -f docker-compose.volumes_disk.yml up -d $(DOCKER_CONTAINERS) && \
 	echo "Old containers replaced"
 
-docker_stop:
+docker-stop:
 	@cd install/ && \
 	docker compose down --volumes --remove-orphans && \
 	docker builder prune -f
-	
-docker_clean_cache:
+docker-remove-images:
+	@cd install/ && \
+	docker compose down --rmi all --volumes --remove-orphans
+docker-clean-cache:
 	@docker builder prune -f && \
 	echo "Docker cache removed for more space on your computer :)"
 
-docker_logs:
+docker-logs:
 	@cd install/ && \
 	docker compose logs --follow; \
+show-containers:
+	@echo "The following containers are available: $(DOCKER_CONTAINERS)"
 
-docker_images_removal:
-	@cd install/ && \
-	docker compose down --rmi all --volumes --remove-orphans
 		
-create_doc:
+
+# Doc related
+create-doc:
 	cd ./doc/ && \
 	doxygen Doxyfile
 
-firefox_doc: ./doc/html/index.html
+run-firefox-doc: ./doc/html/index.html
 	@firefox ./doc/html/index.html
 
-show_doc_chrome: ./doc/html/index.html
+show-doc-chrome: ./doc/html/index.html
 	google-chrome ./doc/html/index.html
 
-firefox_dashboard:
+show-firefox-dashboard:
 	@firefox localhost:$(LOCAL_DISPLAY_PORT)
 
-docker_exec:
-	@docker exec -it $(container) /bin/bash
 
 clean:
 	@rm -rf .mypy_cache

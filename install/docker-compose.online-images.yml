@@ -13,12 +13,21 @@ services:
       - ".env"
 
   my_nvim:
-    extends:
-      service: my_base_service
     container_name: neodock
     hostname: neodock
+    user: "${GID:-1000}:${UID:-1000}"
+    working_dir: /home/${MYUSER:-container_user}
     build:
-      dockerfile: ./Dockerfiles/Dockerfile.editor
+      context: .
+      dockerfile: Dockerfile.editor
+      args:
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+        - "MYUSER=${MYUSER:-container_user}"
+    env_file:
+      - ".env"
+    volumes:
+      - code_directory:/home/${MYUSER:-container_user}/src/:rw
     command: /bin/bash && config submodule init && config submodule update
     tty: true
 
@@ -27,22 +36,47 @@ services:
       service: my_base_service
     container_name: julia-1-9-3_morph
     build:
-      dockerfile: ./Dockerfiles/Dockerfile.julia
+      dockerfile: Dockerfile.julia
     extra_hosts:
       - "python-3-10:127.0.0.1"
     environment:
       - CONFIG_FILE_PATH=configs/dashboard_config_disk.json
+    volumes:
+      - code_directory:/usr/src/app/:rw
+      - disk:/usr/src/app/Data_these:rw
     network_mode: host
+
     command: julia Dashboard_App.jl
 
-  python:
+  python-opt:
+    container_name: repo-setter-opt-python
     extends:
       service: my_base_service
-    container_name: repo-setter-python
     build:
-      dockerfile: ./Dockerfiles/Dockerfile.python
+      dockerfile: Dockerfile.python_optimized
+      target: app-run-stage
+      args:
+        POETRY_INSTALL_OPTS: "--no-root --with dev" # install dev dependencies during test/devel build
     environment:
       - DISPLAY=$DISPLAY
+    volumes:
+      - code_directory:/usr/src/app/:rw
+    # command: python demos/python/main.py
+    privileged: true # To avoid libGL errors
+    tty: true
+    network_mode: host
+
+  python:
+    container_name: repo-setter-python
+    extends:
+      service: my_base_service
+    build:
+      dockerfile: Dockerfile.python
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - code_directory:/usr/src/app/:rw
+      - disk:/usr/src/app/external_data/:rw
     command: python3 dashboard.py
     privileged: true # To avoid libGL errors
     network_mode: host
@@ -52,7 +86,9 @@ services:
       service: my_base_service
     container_name: latex
     build:
-      dockerfile: ./Dockerfiles/Dockerfile.latex
+      dockerfile: Dockerfile.latex
+    volumes:
+      - code_directory:/usr/src/app/:rw
     tty: true # makes the container running even when the command is finished.
 
   node_js:
@@ -61,7 +97,26 @@ services:
     container_name: node_js
     build:
       context: .. # to add demos in build context
-      dockerfile: ./install/Dockerfiles/Dockerfile.node_js
+      dockerfile: ./install/Dockerfile.node_js
+    volumes:
+      - code_directory:/usr/src/app/:rw
+      - /usr/src/app/node_modules
+    command: npm start
+    network_mode: bridge
+    ports:
+      - 7346:7346
+      - 35729:35729
+
+  node_js_opt:
+    extends:
+      service: my_base_service
+    container_name: node_js_opt
+    build:
+      context: .. # to add demos in build context
+      dockerfile: ./install/Dockerfile.nodejs_optimized
+    volumes:
+      - code_directory:/usr/src/app/:rw
+      - /usr/src/app/node_modules
     command: npm start
     network_mode: bridge
     ports:
@@ -73,11 +128,15 @@ services:
     extends:
       service: my_base_service
     container_name: python_torch_repo-setter
+
     build:
       context: .
-      dockerfile: ./Dockerfiles/Dockerfile.python
+      dockerfile: Dockerfile.python
+
     environment:
       - DISPLAY=$DISPLAY
+    volumes:
+      - code_directory:/usr/src/app/:rw
     command: python3 torch_instructions.py
     depends_on:
       - torch
@@ -89,11 +148,19 @@ services:
     extends:
       service: my_base_service
     container_name: torch_repo-setter
+
     build:
       context: .
-      dockerfile: ./Dockerfiles/Dockerfile.pytorch
+      dockerfile: Dockerfile.pytorch
+
     environment:
       - DISPLAY=$DISPLAY
+    volumes:
+      - code_directory:/usr/src/app/:rw
+    # volumes:
+    #   # - X11_unix:/tmp.X11-unix:ro
+    #   - X_authority:/root/.Xauthority:rw"
+
     # this command makes the container never stop
     # useful for navigating in it with docker exec
     #command: tail -f /dev/null
@@ -107,3 +174,17 @@ services:
               count: 1
               capabilities: [gpu]
     network_mode: host
+
+volumes:
+  disk:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${DISK_DEVICE}
+  code_directory:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${CODE_DIRECTORY_DEVICE}

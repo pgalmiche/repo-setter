@@ -95,7 +95,7 @@ for CONTAINER in $CONTAINERS; do
 done
 
 echo "Keeping Dockerfiles: ${DOCKERFILES_TO_KEEP[*]}"
-for FILE in install/Dockerfile.*; do
+for FILE in install/Dockerfiles/Dockerfile.*; do
     if [[ ! " ${DOCKERFILES_TO_KEEP[*]} " =~ $(basename "$FILE") ]]; then
         echo "Removing $FILE as it does not correspond to any chosen container."
         rm -f "$FILE"

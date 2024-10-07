@@ -2,7 +2,7 @@
 Demo
 ====
 
-To show the power of 3D animations, we show the documentation of the 
+To demonstrate the power of 3D animations, we show the documentation of the 
 :SimExporter:`SimExporter <>` project.
 
 

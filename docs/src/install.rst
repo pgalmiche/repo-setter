@@ -26,7 +26,7 @@ Install
 Install from script
 """"""""""""""""""""
 
-**repo-setter** can also be installed from the script for users:
+**repo-setter** is thought to be installed from the script for users:
 
 .. code-block:: bash
 
@@ -36,7 +36,7 @@ Install from script
 Install with *git*
 """"""""""""""""""
 
-**repo-setter** can also be installed with git for developers:
+Developers can also clone **repo-setter** with the following bash command:
 
 .. code-block:: bash
 

@@ -12,15 +12,13 @@ Step 1: run docker
 
 .. code-block:: bash
 
-  make build docker
+  make docker-build
 
 * run the container
 
 .. code-block:: bash
 
-  make docker_run
-
-
+  make docker-run
 
 
 Step 2: Enjoy the code 
@@ -37,10 +35,10 @@ Step 3: stop docker
 
 .. code-block:: bash
 
-  make docker_stop
+  make docker-stop
 
 * delete the image and all dependencies of this project on your computer
 
 .. code-block:: bash
 
-  make docker_image_removal
+  make docker-image_removal
