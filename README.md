@@ -1,6 +1,6 @@
 # Repo Setter
 
-[![pipeline status](https://gitlab.com/pgalmiche/repo-setter/badges/main/pipeline.svg)](https://gitlab.com/pgalmiche/repo-setter/-/commits/main)
+[![Pipeline Status](https://gitlab.com/pgalmiche/repo-setter/badges/main/pipeline.svg)](https://gitlab.com/pgalmiche/repo-setter/-/commits/main)
 [![Latest Release](https://gitlab.com/pgalmiche/repo-setter/-/badges/release.svg)](https://gitlab.com/pgalmiche/repo-setter/-/releases)
 
 ## In a hurry?
@@ -72,6 +72,7 @@ For more details, look at the [documentation](https://pgalmiche.gitlab.io/repo-s
 
 <details>
   <summary>With a script</summary>
+
 ### Script
 
 You can initialize your repo with the following command:
@@ -84,6 +85,7 @@ curl https://gitlab.com/pgalmiche/repo-setter/-/raw/main/scripts/config-init | b
 
 <details>
   <summary>Manually</summary>
+
 ### Manual
 
 Or you can clone it with the command:

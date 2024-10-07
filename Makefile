@@ -50,7 +50,9 @@ docker-clean-cache:
 
 docker-logs:
 	@cd install/ && \
-	docker compose logs --follow; \
+	docker compose logs --follow;
+
+
 show-containers:
 	@echo "The following containers are available: $(DOCKER_CONTAINERS)"
 
