@@ -1,6 +1,5 @@
 # Demos
 
-
 You can find various demos that you can use as a template for your project.
 The main advantage of using docker compose in these project is that you don't need to install anything except for the docker images to run your projects.
 
@@ -30,3 +29,7 @@ The node_js demo shows slides generated using the [revealjs](https://revealjs.co
 
 You can modify the template by directly modifying the files.
 The docker container is running a server to display the output [locally on port 8000](http://localhost:8000).
+
+## quarto
+
+The demo utilizes [quarto](https://quarto.org/) to generate slides in various formats.

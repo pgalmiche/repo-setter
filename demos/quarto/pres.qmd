@@ -1,9 +1,10 @@
 ---
-title: "My Multi-format Presentation"
-author: "Your Name"
 output:
   revealjs:
     self_contained: true
+    theme: "black"      # Change theme as needed
+    transition: "slide"  # Slide transition style
+    
   pdf_document:
     latex_engine: xelatex
   powerpoint_presentation:
@@ -20,3 +21,15 @@ Welcome to my presentation!
 - Point 1
 - Point 2
 - Point 3
+
+---
+
+# Super interesting Slide
+
+## Subtitle
+
+This is the text inside the subtitle...
+
+---
+
+
