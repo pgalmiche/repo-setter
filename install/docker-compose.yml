@@ -12,6 +12,15 @@ services:
     env_file:
       - ".env"
 
+  quarto:
+    extends:
+      service: my_base_service
+    container_name: quarto-container
+    build:
+      dockerfile: ./Dockerfiles/Dockerfile.quarto
+    command: bash
+    tty: true
+
   my_nvim:
     extends:
       service: my_base_service

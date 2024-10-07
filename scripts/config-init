@@ -38,7 +38,7 @@ sed -i "s/USER/$USER/g" README.md
 read -p "Enter your git repo: " REPO </dev/tty
 sed -i "s/YOUR_REPO/$REPO/g" README.md
 
-echo "You can choose as many as you want in: python latex node_js"
+echo "You can choose as many as you want in: python latex node_js quarto"
 read -p "Enter the containers to use: " CONTAINERS </dev/tty
 sed -i "s/BOXES/$CONTAINERS/g" install/.env
 

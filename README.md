@@ -198,7 +198,7 @@ If you installed the Docker Desktop, you already have docker compose. Else, [fol
 In this project, you can simply run the following to build the docker images you need:
 
 ```bash
-make build_docker
+make docker-build
 ```
 
 Once the image is build on your computer you just need to start and stop the containers.
@@ -208,7 +208,7 @@ Once the image is build on your computer you just need to start and stop the con
 To run your containers, use:
 
 ```bash
-make docker_run
+make docker-run
 ```
 
 This command will run the docker containers from the image you previously have build.
@@ -219,7 +219,7 @@ The containers can contain servers or just run a specific command.
 To stop your containers and delete them, use:
 
 ```bash
-make docker_stop
+make docker-stop
 ```
 
 Use this command to remove the container you created, or stop them if they were not stopped (server).
@@ -229,7 +229,7 @@ Use this command to remove the container you created, or stop them if they were 
 Once you are done with the use of the project, you can remove all the images with:
 
 ```bash
-make docker_images_removal
+make docker-remove-images
 ```
 
 #### Docker volumes and environment variables

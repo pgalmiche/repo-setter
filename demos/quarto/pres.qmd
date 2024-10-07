@@ -1,0 +1,22 @@
+---
+title: "My Multi-format Presentation"
+author: "Your Name"
+output:
+  revealjs:
+    self_contained: true
+  pdf_document:
+    latex_engine: xelatex
+  powerpoint_presentation:
+---
+
+# Slide 1
+
+Welcome to my presentation!
+
+---
+
+# Slide 2
+
+- Point 1
+- Point 2
+- Point 3

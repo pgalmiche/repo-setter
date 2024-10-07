@@ -8,6 +8,10 @@ services:
     volumes:
       - code_directory:/usr/src/app/:rw
 
+  quarto:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+
   python:
     volumes:
       - code_directory:/usr/src/app/:rw

@@ -14,6 +14,10 @@ services:
       - code_directory:/usr/src/app/:rw
       - disk:/usr/src/app/external_data/:rw
 
+  quarto:
+    volumes:
+      - code_directory:/usr/src/app/:rw
+
   latex:
     volumes:
       - code_directory:/usr/src/app/:rw
