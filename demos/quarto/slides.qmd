@@ -1,0 +1,110 @@
+---
+title: "Awesome Slide presentation"
+subtitle: "made with revealjs and quarto"
+author:  "You, him and others"
+bibliography: references.bib
+format:
+  revealjs:
+    # title-slide-attributes:
+    #     data-state: "hide-menubar"
+    center: true
+    theme: dark
+    slide-number: true
+    transition: slide
+    background-transition: fade
+    controls-layout: bottom-right
+    menu: true
+    css: "css/mycustomstyle.css"
+    section-divs: true
+    logo: images/ICube.png 
+    simplemenu:
+        barhtml:
+            # header: "<div class='menubar'><ul class='menu'></ul></div>"
+            # footer: "<div class='slide-number'></div></div>"
+            header: "<div id='menuheader' class='menubar'><a class='logo' href='#'><img id='menuimg' src='./images/ICube.png'></a><ul class='menu'></ul><a class='logo' href='#'><img id='menuimg' src='./images/unistra.png'></a> <div class='slide-number'></div></div>"
+            footer: "<div id='menufooter' class='menubar'><div class='title'>Slides</div><div class='author'>Author</div></div>"
+        scale: 1
+revealjs-plugins:
+  - simplemenu
+---
+
+## Table of Contents 
+<ul class="menu"><ul>
+
+# Slide citation {data-name="Citations"}
+
+Welcome to my [Reveal.js](https://revealjs.com) presentation!
+
+[@ezuzDeblurringDenoisingMaps2017] is a very interesting paper.
+
+# Slide with Image and Incremental Bullets {data-stack-name="Two columns"}
+
+## Key Points
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Notions to explore
+
+::: {.incremental}
+- Point 1
+- Point 2
+- Point 3
+- Point 4
+:::
+
+:::
+
+::: {.column width="50%"}
+![](./images/ICube.png){width=100%}
+*ICube laboratory Logo*
+:::
+
+::::
+
+# Maths slide {data-stack-name="Maths"}
+## LaTeX Equations
+
+[MathJax](https://www.mathjax.org/) rendering of equations to HTML
+
+::: columns
+::: {.column width="40%"}
+``` tex
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
+```
+:::
+
+::: {.column width="60%"}
+```{=tex}
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+```
+```{=tex}
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
+```
+:::
+:::
+
+::: footer
+Learn more: [LaTeX Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations)
+:::
+
+
+# References

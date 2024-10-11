@@ -18,8 +18,9 @@ services:
     container_name: quarto-container
     build:
       dockerfile: ./Dockerfiles/Dockerfile.quarto
-    command: bash
-    tty: true
+    command: quarto render slides.qmd --to revealjs
+    # command: bash
+    # tty: true
 
   my_nvim:
     extends:

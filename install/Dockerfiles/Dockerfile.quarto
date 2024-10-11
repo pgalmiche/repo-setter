@@ -23,6 +23,17 @@ RUN install.r \
 RUN curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb
 RUN gdebi --non-interactive quarto-linux-amd64.deb
 
+RUN quarto add martinomagnifico/quarto-simplemenu --no-prompt
+
+# Move the plugin to your project's directory
+RUN mkdir -p /usr/src/_extensions
+# move closer to the binding mount
+RUN mv _extensions/martinomagnifico/simplemenu /usr/src/_extensions/simplemenu
+# try to add as plugin instead of extension
+#RUN mv /usr/src/_extensions/simplemenu/_extension.yml /usr/src/_extensions/simplemenu/_plugin.yml
+
+
+
 # ARG UID=1000
 # ARG GID=1000
 #
