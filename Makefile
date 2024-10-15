@@ -44,8 +44,9 @@ docker-stop:
 docker-remove-images:
 	@cd install/ && \
 	docker compose down --rmi all --volumes --remove-orphans
-docker-clean-cache:
+docker-clean:
 	@docker builder prune -f && \
+	docker image prune -f && \
 	echo "Docker cache removed for more space on your computer :)"
 
 docker-logs:
