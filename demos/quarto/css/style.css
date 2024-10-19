@@ -5,10 +5,8 @@
   height: 90%;
 }
 
-
 :root {
   --r-heading-text-transform: none;
-  --r-background-color: #1a1626;
 }
 .center {
   text-align: center;
@@ -132,4 +130,25 @@ ol.twocol li:before {
   display: inline-block;
   width: 1.2em;
   text-align: right;
+}
+
+/* For title-page */
+
+.quarto-title-block {
+  display: flex;
+  flex-direction: row; /* Stack items vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+.quarto-title-logos {
+  display: flex; /* Use flexbox to arrange logos in a row */
+  justify-content: space-evenly; /* Center the logos in the container */
+  margin: 20px 0; /* Space between logos and title */
+  width: 100%; /* Set width to full to center within the parent */
+}
+
+.quarto-title-logos img {
+  width: 20%;
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 0px; /* Add horizontal space between logos */
 }

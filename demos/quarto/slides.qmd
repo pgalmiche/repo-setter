@@ -1,21 +1,32 @@
 ---
-title: "Awesome Slide presentation"
+title: "Awesome Slide Presentation"
 subtitle: "made with revealjs and quarto"
-author:  "You, him and others"
+author:
+  - name: Norah Jones
+    affiliation: 
+      - Carnegie Mellon University
+      - University of Chicago
+  - name: Josiah Carberry
+    affiliation: Brown University
+date: today
+
 bibliography: references.bib
 format:
   revealjs:
+    template-partials:
+      - title-slide.html
     title-slide-attributes:
         data-state: "hide-menubar"
     center: true
-    theme: dark
+    incremental: true
+    theme: [moon, ./css/custom.scss]
     slide-number: true
     transition: slide
     background-transition: fade
     controls-layout: bottom-right
-    menu: false
+    menu: true
     css: "css/style.css"
-    section-divs: true
+    section-divs: false
     logo: images/ICube.png 
     simplemenu:
         barhtml:
@@ -36,20 +47,17 @@ Welcome to my [Reveal.js](https://revealjs.com) presentation!
 
 [@ezuzDeblurringDenoisingMaps2017] is a very interesting paper.
 
-# Slide with Image and Incremental Bullets {data-stack-name="Two columns"}
+# Slide with Image and Bullets {data-stack-name="Two columns"}
 ## Key Points
 
 Several notions are to explore:
 
 ::: {.columns}
 ::: {.column width="40%"}
-
-::: {.incremental}
 - Point 1
 - Point 2
 - Point 3
 - Point 4
-:::
 
 :::
 
@@ -57,6 +65,38 @@ Several notions are to explore:
 ![](./images/ICube.png){width=100%}
 *ICube laboratory Logo*
 :::
+:::
+
+
+
+# Slide with I-Frame, Bullets, and conclusion {data-stack-name="Iframes"}
+## I-Frames for rendering 3D scenes
+
+.html files are very interesting for:
+
+::: {.columns}
+::: {.column width="50%"}
+
+- sharing demos readable on any computer
+- use in documentation or websites/slides
+
+:::
+
+::: {.column width="50%"}
+```{=html}
+<iframe src="./iframes/meshes.html" width="500" height="300" style="margin-bottom: 0"; ></iframe>
+
+```
+*Beating heart demo from [SimExporter](https://github.com/RobinEnjalbert/SimExporter)*
+:::
+:::
+
+::: {.fragment}
+&rarr; We use K3D here to generate the scenes
+:::
+
+::: {.notes}
+Thanks Robin for you work on K3D lib!
 :::
 
 # Maths slide {data-stack-name="Maths"}
